@@ -1,7 +1,8 @@
 /* CS261- Assignment 1 - Q.2*/
-/* Name:
- * Date:
- * Solution description:
+/* Name: Julian
+ * Date: Weisbord
+ * Solution description: shows how pointers can be used to change a value in memory
+ so the scope doesn't matter.
  */
 
 #include <stdio.h>
