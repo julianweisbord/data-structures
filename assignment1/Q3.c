@@ -8,7 +8,15 @@
 #include <stdlib.h>
 
 void sort(int* number, int n){
+  int i;
+  int *temp = malloc(n *sizeof(int));
      /*Sort the given array number , of length n*/
+     for(i = 0; i< n; ++i){
+       temp[i] = number[i];
+       number[i] = 0;
+       printf("number[i]: %d", number[i]);
+     }
+    //  next sort temp array and store into number
 }
 
 int main(){
@@ -29,6 +37,7 @@ int main(){
     }
 
     /*Pass this array along with n to the sort() function.*/
+    sort(my_array,n);
 
     /*Print the contents of the array.*/
     printf("Array: \n");
