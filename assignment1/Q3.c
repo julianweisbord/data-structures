@@ -1,7 +1,7 @@
 /* CS261- Assignment 1 - Q.3*/
 /* Name: Julian Weisbord
  * Date: 09/28/2015
- * Solution description:
+ * Solution description: Algorithm to sort array of random integers
  */
 
 #include <stdio.h>
@@ -9,30 +9,19 @@
 
 void sort(int* number, int n){
   int i,j;
-  int *temp = malloc(n *sizeof(int));
-     /*Sort the given array number , of length n*/
-  // for(i = 0; i< n; ++i){
-  // //  temp[i] = number[i];
-  //  number[i] = 0;
-  //  printf("number[i]: %d", number[i]);
-  // }
-  for(j = 0; j <n; ++j){
-    while(number[j] < number[j-1]){
-
-      for(i = 0; i<n; ++i){
-        if(i> 0){
-          if(number[j] < number[j-1]){
-            int x = number[j];
-            number[j] = number[j-1];
-            number[j-1] = x;
-          }
+   /*Sort the given array number , of length n*/
+    for(i = 0; i <(n-1); ++i){
+      for(j = 0; j < n - i; ++j){
+        // if(j> 0){
+        if(number[j] < number[j-1]){
+          int x = number[j];
+          number[j] = number[j-1];
+          number[j-1] = x;
         }
+        // }
       }
-
-    }
-
   }
-    //  next sort temp array and store into number
+
 }
 
 int main(){
