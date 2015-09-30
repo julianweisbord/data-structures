@@ -8,14 +8,30 @@
 #include <stdlib.h>
 
 void sort(int* number, int n){
-  int i;
+  int i,j;
   int *temp = malloc(n *sizeof(int));
      /*Sort the given array number , of length n*/
-     for(i = 0; i< n; ++i){
-       temp[i] = number[i];
-       number[i] = 0;
-       printf("number[i]: %d", number[i]);
-     }
+  // for(i = 0; i< n; ++i){
+  // //  temp[i] = number[i];
+  //  number[i] = 0;
+  //  printf("number[i]: %d", number[i]);
+  // }
+  for(j = 0; j <n; ++j){
+    while(number[j] < number[j-1]){
+
+      for(i = 0; i<n; ++i){
+        if(i> 0){
+          if(number[j] < number[j-1]){
+            int x = number[j];
+            number[j] = number[j-1];
+            number[j-1] = x;
+          }
+        }
+      }
+
+    }
+
+  }
     //  next sort temp array and store into number
 }
 
