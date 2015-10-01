@@ -49,5 +49,6 @@ int main(){
     for(i=0; i<20; ++i){
       printf("\t%d\n", my_array[i]);
     }
+    free(my_array);
     return 0;
 }

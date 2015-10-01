@@ -15,23 +15,37 @@ struct student{
 
 struct student* allocate(){
      /*Allocate memory for ten students*/
-     student *studentArray = malloc(10 * sizeof(student));
+     struct student *studentArray = malloc(10 * sizeof(struct student));
      /*return the pointer*/
      return studentArray;
 }
 
 void generate(struct student* students){
      /*Generate random ID and scores for 10 students, ID being between 1 and 10, scores between 0 and 100*/
+		 int i;
+		 time_t timeVal;
+		 srand((unsigned) time(&timeVal));
+		//  ids must be unique
+		 for(i=0; i< 10; ++i){
+			 students[i].id = (rand() % 10);
+			 students[i].score = (rand() % 100);
+		 }
+
 
 }
 
 void output(struct student* students){
+		int i;
      /*Output information about the ten students in the format:
               ID1 Score1
               ID2 score2
               ID3 score3
               ...
               ID10 score10*/
+
+		for(i=0; i < 10; ++i){
+			printf("ID%d Score%d\n", students[i].id, students[i].score);
+		}
 }
 
 void summary(struct student* students){
@@ -47,11 +61,11 @@ int main(){
     struct student* stud = NULL;
 
     /*call allocate*/
-
+		stud = allocate();
     /*call generate*/
-
+		generate(stud);
     /*call output*/
-
+		output(stud);
     /*call summary*/
 
     /*call deallocate*/
