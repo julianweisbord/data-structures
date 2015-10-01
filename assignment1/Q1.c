@@ -3,7 +3,7 @@
  * Date:
  * Solution description:
  */
- 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -15,13 +15,14 @@ struct student{
 
 struct student* allocate(){
      /*Allocate memory for ten students*/
-     
+     student *studentArray = malloc(10 * sizeof(student));
      /*return the pointer*/
+     return studentArray;
 }
 
 void generate(struct student* students){
      /*Generate random ID and scores for 10 students, ID being between 1 and 10, scores between 0 and 100*/
-     
+
 }
 
 void output(struct student* students){
@@ -35,7 +36,7 @@ void output(struct student* students){
 
 void summary(struct student* students){
      /*Compute and print the minimum, maximum and average scores of the ten students*/
-     
+
 }
 
 void deallocate(struct student* stud){
@@ -44,15 +45,15 @@ void deallocate(struct student* stud){
 
 int main(){
     struct student* stud = NULL;
-    
+
     /*call allocate*/
-    
+
     /*call generate*/
-    
+
     /*call output*/
-    
+
     /*call summary*/
-    
+
     /*call deallocate*/
 
     return 0;
