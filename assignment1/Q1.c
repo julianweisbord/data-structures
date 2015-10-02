@@ -38,14 +38,33 @@ void generate(struct student* students){
 	}
 
 void output(struct student* students){
-		int i;
+		int i,j, tempID, tempScore;
      /*Output information about the ten students in the format:
               ID1 Score1
               ID2 score2
               ID3 score3
               ...
               ID10 score10*/
+		//unordered
+		for(i=0; i < 10; ++i){
+			printf("ID%d Score%d\n", students[i].id, students[i].score);
+		}
+		printf("\n");
+		// ordered
+		int n = 10;
+		for(i=0; i < n-1; ++i){
+			for(j =0; j< n -i; ++j){
+				if(students[j].id < students[j-1].id){
+					tempID = students[j].id;
+					tempScore =students[j].score;
+					students[j].id = students[j-1].id;
+					students[j].score = students[j-1].score;
+					students[j-1].id = tempID;
+					students[j-1].score = tempScore;
 
+				}
+			}
+		}
 		for(i=0; i < 10; ++i){
 			printf("ID%d Score%d\n", students[i].id, students[i].score);
 		}
