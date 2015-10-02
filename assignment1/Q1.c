@@ -1,6 +1,6 @@
 /* CS261- Assignment 1 - Q.1*/
-/* Name:
- * Date:
+/* Name: Julian Weisbord
+ * Date: 09/30/15
  * Solution description:
  */
 
@@ -22,16 +22,34 @@ struct student* allocate(){
 
 void generate(struct student* students){
      /*Generate random ID and scores for 10 students, ID being between 1 and 10, scores between 0 and 100*/
-		 int i;
+		 int i,j, possibleID;
 		 time_t timeVal;
 		 srand((unsigned) time(&timeVal));
-		//  ids must be unique
-		 for(i=0; i< 10; ++i){
-			 students[i].id = (rand() % 10);
-			 students[i].score = (rand() % 100);
-		 }
 
+		//  ids must be unique, why do some become 0?
+		int check = 0;
+		int one =1;
+		for(i=0; i< 10; ++i){
+			while(one >0){
+				possibleID = (rand() % 10);
+				for(j=0; j< 10; ++j){
+				 	if(students[j].id ==possibleID){
+						check =1;
+						one =0; //to break out of while
+						break; //break out of for
+				 	}
+			 	}
+				if(check ==0){
+					break;
+				}
 
+			} //while
+			one = 1;
+			if(check ==0){
+			 	students[i].id = possibleID;
+			}
+			 	students[i].score = (rand() % 100);
+		}
 }
 
 void output(struct student* students){
