@@ -27,7 +27,7 @@ void generate(struct student* students){
 		int i,j;
 		for(i = 0; i < 10; ++i){
 		  students[i].id= (rand() % 10);
-			students[i].score = (rand() % 100);
+			students[i].score = (rand() % 101);
 		  for(j =0; j< i; ++j){
 		    if(students[i].id == students[j].id){
 		      students[i].id= (rand() % 10);
@@ -72,11 +72,26 @@ void output(struct student* students){
 
 void summary(struct student* students){
      /*Compute and print the minimum, maximum and average scores of the ten students*/
+		 int i, largest;
+		 largest = 0;
+		 for(i = 0; i <10; ++i){
+			 if(students[i].score > students[largest].score){
+				 largest = i;
+				 printf("Largest %d\n", largest);
+			 }
+		 }
+		 printf("Largest %d\n", largest);
+		 printf("Largest val %d\n", students[largest].score);
 
 }
 
 void deallocate(struct student* stud){
      /*Deallocate memory from stud*/
+		// if(stud != NULL){
+ 	// 		free(stud);
+ 	// 		stud = NULL;
+		// }
+		//  stud = NULL;
 }
 
 int main(){
@@ -89,8 +104,9 @@ int main(){
     /*call output*/
 		output(stud);
     /*call summary*/
-
+		summary(stud);
     /*call deallocate*/
+		deallocate(stud);
 
     return 0;
 }
