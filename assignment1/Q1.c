@@ -52,16 +52,17 @@ void output(struct student* students){
 		printf("\n");
 		// ordered
 		int n = 10;
-		for(i=0; i < n-1; ++i){
+		for(i=0; i < n; ++i){
 			for(j =0; j< n -i; ++j){
-				if(students[j].id < students[j-1].id){
-					tempID = students[j].id;
-					tempScore =students[j].score;
-					students[j].id = students[j-1].id;
-					students[j].score = students[j-1].score;
-					students[j-1].id = tempID;
-					students[j-1].score = tempScore;
-
+				if(j >0){
+					if(students[j].id < students[j-1].id){
+						tempID = students[j].id;
+						tempScore =students[j].score;
+						students[j].id = students[j-1].id;
+						students[j].score = students[j-1].score;
+						students[j-1].id = tempID;
+						students[j-1].score = tempScore;
+					}
 				}
 			}
 		}
@@ -90,14 +91,14 @@ void summary(struct student* students){
 				 smallest = i;
 			 }
 		 }
-		 printf("smallest number: %d", students[smallest].score);
+		 printf("smallest number: %d\n", students[smallest].score);
 
 		//  compute average
 		for(i =0; i< 10; ++i){
 			average +=students[i].score;
 		}
 		average/=10;
-		printf("This is the average: %d", average);
+		printf("This is the average: %d\n", average);
 
 }
 
