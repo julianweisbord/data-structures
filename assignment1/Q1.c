@@ -72,7 +72,7 @@ void output(struct student* students){
 
 void summary(struct student* students){
      /*Compute and print the minimum, maximum and average scores of the ten students*/
-		 int i, largest, smallest;
+		 int i, largest, smallest, average;
 		 largest = 0;
 		 smallest = 0;
 		//  compute largest
@@ -93,7 +93,11 @@ void summary(struct student* students){
 		 printf("smallest number: %d", students[smallest].score);
 
 		//  compute average
-		
+		for(i =0; i< 10; ++i){
+			average +=students[i].score;
+		}
+		average/=10;
+		printf("This is the average: %d", average);
 
 }
 
