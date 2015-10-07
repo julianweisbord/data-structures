@@ -3,7 +3,6 @@
  * Date: 09/30/15
  * Solution description:
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -73,7 +72,8 @@ void output(struct student* students){
 
 void summary(struct student* students){
      /*Compute and print the minimum, maximum and average scores of the ten students*/
-		 int i, largest, smallest, average;
+		 int i, largest, smallest;
+		 double average;
 		 largest = 0;
 		 smallest = 0;
 		//  compute largest
@@ -98,7 +98,7 @@ void summary(struct student* students){
 			average +=students[i].score;
 		}
 		average/=10;
-		printf("This is the average: %d\n", average);
+		printf("This is the average: %1f\n", average);
 
 }
 
