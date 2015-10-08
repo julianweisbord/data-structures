@@ -15,7 +15,22 @@ struct student{
 void sort(struct student* students, int n){
      /*Sort the n students based on their score*/
      /* Remember, each student must be matched with their original score after sorting */
-
+		//  scores must be in ascending order
+		int i,j, tempID, tempScore;
+		 for(i=0; i < n; ++i){
+ 			for(j =0; j< n -i; ++j){
+ 				if(j >0){
+ 					if(students[j].id < students[j-1].id){
+ 						tempID = students[j].id;
+ 						tempScore =students[j].score;
+ 						students[j].id = students[j-1].id;
+ 						students[j].score = students[j-1].score;
+ 						students[j-1].id = tempID;
+ 						students[j-1].score = tempScore;
+ 					}
+ 				}
+ 			}
+ 		}
 }
 
 int main(){
@@ -42,9 +57,12 @@ int main(){
     for(i = 0; i< n; ++i){
       printf("id%d score%d\n",students[i].id,students[i].score);
     }
+		printf("\n");
     /*Pass this array along with n to the sort() function*/
-
+    sort(students, n);
     /*Print the contents of the array of n students.*/
-
+		for(i = 0; i< n; ++i){
+      printf("id%d score%d\n",students[i].id,students[i].score);
+    }
     return 0;
 }
