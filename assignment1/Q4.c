@@ -20,7 +20,7 @@ void sort(struct student* students, int n){
 		 for(i=0; i < n; ++i){
  			for(j =0; j< n -i; ++j){
  				if(j >0){
- 					if(students[j].id < students[j-1].id){
+ 					if(students[j].score < students[j-1].score){
  						tempID = students[j].id;
  						tempScore =students[j].score;
  						students[j].id = students[j-1].id;
