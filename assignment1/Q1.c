@@ -1,7 +1,8 @@
 /* CS261- Assignment 1 - Q.1*/
 /* Name: Julian Weisbord
  * Date: 09/30/15
- * Solution description:
+ * Solution description: Generates ids and scores then sorts them and finds
+ average, smallest, and largest.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -105,11 +106,10 @@ void summary(struct student* students){
 
 void deallocate(struct student* stud){
      /*Deallocate memory from stud*/
-		// if(stud != NULL){
- 	// 		free(stud);
- 	// 		stud = NULL;
-		// }
-		//  stud = NULL;
+		if(stud != NULL){
+ 	 		free(stud);
+ 	 		stud = NULL;
+		}
 }
 
 int main(){
