@@ -87,7 +87,8 @@ void summary(struct student* students){
 		 printf("Largest val %d\n", students[largest].score);
 		 //compute smallest
 		 for(i = 0; i < 10; ++i){
-			 if(students[i].score < students[i-1].score){
+
+			 if(students[i].score < students[smallest].score){
 				 smallest = i;
 			 }
 		 }
