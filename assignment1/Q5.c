@@ -40,7 +40,6 @@ void studly(char* word){
 
 int main(){
     /*Read word from the keyboard using scanf*/
-    int i =0;
     char word[100];
 
     printf("Enter a word.\n");

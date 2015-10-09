@@ -13,10 +13,10 @@ Q5 : Q5.c
 	gcc -g -Wall -std=c99 -o Q5 Q5.c
 all:
 	gcc -g -Wall -std=c99 -o Q0 Q0.c
-	gcc -g -Wall -std=c99 -o Q1 Q1.c
+	gcc -g -Wall -o Q1 Q1.c # rand doesn't seem to work with c99, still compiles
 	gcc -g -Wall -std=c99 -o Q2 Q2.c
-	gcc -g -Wall -std=c99 -o Q3 Q3.c
-	gcc -g -Wall -std=c99 -o Q4 Q4.c
+	gcc -g -Wall -o Q3 Q3.c
+	gcc -g -Wall -o Q4 Q4.c
 	gcc -g -Wall -std=c99 -o Q5 Q5.c
 
 clean:
