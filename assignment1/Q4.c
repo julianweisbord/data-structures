@@ -1,7 +1,7 @@
 /* CS261- Assignment 1 - Q.4*/
 /* Name: Julian Weisbord
  * Date: 9/7/15
- * Solution description:
+ * Solution description: sorts array by score.
  */
 
 #include <stdio.h>
