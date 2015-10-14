@@ -1,15 +1,23 @@
-all: prog
+all: calc testda
 
-prog: arrayBagStack.o main.o
-	gcc -g -Wall -std=c99 -o prog arrayBagStack.o main.o
+calc: dynamicArray.o calc.o
+	gcc -g -Wall -std=c99 -o calc dynamicArray.o calc.o -lm
 
-main.o: main.c arrayBagStack.h
-	gcc -g -Wall -std=c99 -c main.c
+testda: dynamicArray.o testDynArray.o
+	gcc -g -Wall -std=c99 -o testda dynamicArray.o testDynArray.o
 
-arrayBagStack.o: arrayBagStack.c arrayBagStack.h
-	gcc -g -Wall -std=c99 -c arrayBagStack.c
+calc.o: calc.c dynamicArray.h
+	gcc -g -Wall -std=c99 -c calc.c
 
+testDynArray.o: testDynArray.c dynamicArray.h
+	gcc -g -Wall -std=c99 -c testDynArray.c
+
+dynamicArray.o: dynamicArray.c dynamicArray.h 
+	gcc -g -Wall -std=c99 -c dynamicArray.c	
+		
 clean:
-	rm arrayBagStack.o
-	rm main.o
-	rm prog
+	rm dynamicArray.o
+	rm calc.o
+	rm testDynArray.o
+	rm calc
+	rm testda
