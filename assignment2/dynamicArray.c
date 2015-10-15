@@ -171,7 +171,7 @@ TYPE getDynArr(DynArr *v, int pos)
 		if(v->size >0){
 			if(pos > v->size || pos < 0){
 				printf("invalid position, exiting...\n");
-					exit(0);
+				exit(0);
 			}
 		}
 	}
@@ -194,6 +194,15 @@ TYPE getDynArr(DynArr *v, int pos)
 void putDynArr(DynArr *v, int pos, TYPE val)
 {
 	/* FIXME: You will write this function */
+	if(v->data != NULL){
+		if(v->size > 0){
+			if(pos > v->size || pos < 0){
+				printf("invalid position, exiting...\n");
+				exit(0);
+			}
+			v->data[pos] = val;
+		}
+	}
 }
 
 /*	Swap two specified elements in the dynamic array
@@ -205,9 +214,21 @@ void putDynArr(DynArr *v, int pos, TYPE val)
 	pre:	i, j >= 0 and i,j < size of the dynamic array
 	post:	index i now holds the value at j and index j now holds the value at i
 */
-void swapDynArr(DynArr *v, int i, int  j)
+void swapDynArr(DynArr *v, int i, int j)
 {
 	/* FIXME: You will write this function */
+	if(v->data != NULL){
+		if(v->size > 0){
+			if(i > v->size || i < 0 ||j > v->size || j < 0 ){
+				printf("invalid position, exiting...\n");
+				exit(0);
+			}
+			TYPE tempi = v->data[i];
+			v->data[i] =v->data[j];
+			v->data[j] =tempi;
+		}
+
+	}
 }
 
 /*	Remove the element at the specified location from the array,
@@ -223,6 +244,11 @@ void swapDynArr(DynArr *v, int i, int  j)
 */
 void removeAtDynArr(DynArr *v, int idx)
 {
+	if(v->data != NULL){
+		if(v->size > 0){
+			
+		}
+	}
 	/* FIXME: You will write this function */
 }
 
