@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "dynamicArray.h"
 
 
@@ -20,7 +21,7 @@ int isNumber(char *s, double *num)
 		*num = 0;
 		return 1;
 	}
-	else 
+	else
 	{
 		returnNum = strtod(s, &end);
 		/* If there's anythin in end, it's bad */
@@ -35,7 +36,7 @@ int isNumber(char *s, double *num)
 
 /*	param: stack the stack being manipulated
 	pre: the stack contains at least two elements
-	post: the top two elements are popped and 
+	post: the top two elements are popped and
 	their sum is pushed back onto the stack.
 */
 void add (struct DynArr *stack)
@@ -45,7 +46,7 @@ void add (struct DynArr *stack)
 
 /*	param: stack the stack being manipulated
 	pre: the stack contains at least two elements
-	post: the top two elements are popped and 
+	post: the top two elements are popped and
 	their difference is pushed back onto the stack.
 */
 void subtract(struct DynArr *stack)
@@ -55,7 +56,7 @@ void subtract(struct DynArr *stack)
 
 /*	param: stack the stack being manipulated
 	pre: the stack contains at least two elements
-	post: the top two elements are popped and 
+	post: the top two elements are popped and
 	their quotient is pushed back onto the stack.
 */
 void divide(struct DynArr *stack)
@@ -74,7 +75,7 @@ double calculate(int numInputTokens, char **inputString)
 	stack = createDynArr(20);
 
 	// start at 1 to skip the name of the calculator calc
-	for(i=1;i < numInputTokens;i++) 
+	for(i=1;i < numInputTokens;i++)
 	{
 		s = inputString[i];
 
@@ -118,19 +119,27 @@ double calculate(int numInputTokens, char **inputString)
 		else if(strcmp(s, "log") == 0)
 			/* FIXME: replace printf with your own function */
 			printf("Log\n");
-		else 
+		else
 		{
 			// FIXME: You need to develop the code here (when s is not an operator)
 			// Remember to deal with special values ("pi" and "e")
-			
-		}
-	}	//end for 
+			if(strcmp(s, "e") ==0){
+				s = "2.7182818";
 
-	/* FIXME: You will write this part of the function (2 steps below) 
+			}
+			if(strcmp(s, "pi") ==0){
+				s = "3.14159265";
+
+			}
+
+		}
+	}	//end for
+
+	/* FIXME: You will write this part of the function (2 steps below)
 	 * (1) Check if everything looks OK and produce an error if needed.
 	 * (2) Store the final value in result and print it out.
 	 */
-	
+
 	return result;
 }
 
@@ -138,8 +147,10 @@ int main(int argc , char** argv)
 {
 	// assume each argument is contained in the argv array
 	// argc-1 determines the number of operands + operators
-	if (argc == 1)
+	if (argc == 1){
+		printf("Only one argument\n");
 		return 0;
+	}
 
 	calculate(argc,argv);
 	return 0;
