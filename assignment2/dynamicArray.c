@@ -369,9 +369,20 @@ void popDynArr(DynArr *v)
 int containsDynArr(DynArr *v, TYPE val)
 {
 	/* FIXME: You will write this function */
+	int i;
+	if(v->data != NULL){
+		if(v->size > 0){
+			for(i= 0;i < v->size; ++i ){
+				if(v->data[i] == val){
+					return 1;
+				}
+			}
+
+		}
+	}
 
 	/* FIXME:  You will change this return value */
-	return 1;
+	return 0;
 
 }
 
@@ -388,4 +399,15 @@ int containsDynArr(DynArr *v, TYPE val)
 void removeDynArr(DynArr *v, TYPE val)
 {
 	/* FIXME: You will write this function */
+	int i;
+	if(v->data != NULL){
+		if(v->size > 0){
+			for(i =0; i < v->size; ++i){
+				if(v->data[i] ==val){
+					removeAtDynArr(v,i);
+					break;
+				}
+			}
+		}
+	}
 }
