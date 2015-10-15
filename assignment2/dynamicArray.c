@@ -303,8 +303,10 @@ void pushDynArr(DynArr *v, TYPE val)
 	if(v->data != NULL){
 		if(v->size +1 >= v->capacity){
 			addDynArr(v, val); //double list function
-			v->data[v->size-1]=val;//not working
+
 		}
+		v->data[v->size-1]=val;
+		printf("VAL: %1f\n",val);
 
 	}
 }
@@ -319,7 +321,12 @@ void pushDynArr(DynArr *v, TYPE val)
 TYPE topDynArr(DynArr *v)
 {
 	/* FIXME: You will write this function */
-
+	if(v->data != NULL){
+		if(v->size > 0){
+			printf("TOP ITEM: %1f\n", v->data[v->size-1]);
+			return v->data[v->size-1];
+		}
+	}
 	/* FIXME: You will change this return value*/
 	return 1;
 }
@@ -335,6 +342,13 @@ TYPE topDynArr(DynArr *v)
 void popDynArr(DynArr *v)
 {
 	/* FIXME: You will write this function */
+	if(v->data != NULL){
+		if(v->size > 0){
+			v->data[v->size-1] = 0;
+			--v->size;
+		}
+
+	}
 }
 
 /* ************************************************************************
