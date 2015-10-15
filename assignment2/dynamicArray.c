@@ -300,6 +300,13 @@ int isEmptyDynArr(DynArr *v)
 void pushDynArr(DynArr *v, TYPE val)
 {
 	/* FIXME: You will write this function */
+	if(v->data != NULL){
+		if(v->size +1 >= v->capacity){
+			addDynArr(v, val); //double list function
+			v->data[v->size-1]=val;//not working
+		}
+
+	}
 }
 
 /*	Returns the element at the top of the stack
