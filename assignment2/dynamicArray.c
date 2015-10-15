@@ -244,9 +244,18 @@ void swapDynArr(DynArr *v, int i, int j)
 */
 void removeAtDynArr(DynArr *v, int idx)
 {
+	int i;
 	if(v->data != NULL){
 		if(v->size > 0){
-			
+			if(idx > v->size || idx < 0){
+				printf("invalid position, exiting...\n");
+				exit(0);
+			}
+			v->data[idx] = 0;
+			for(i = idx; i< v->size; ++i){
+				v->data[i] = v->data[i+1];
+			}
+			--v->size;
 		}
 	}
 	/* FIXME: You will write this function */
@@ -269,9 +278,14 @@ void removeAtDynArr(DynArr *v, int idx)
 int isEmptyDynArr(DynArr *v)
 {
 	/* FIXME: You will write this function */
+	if(v->data != NULL){
 
+		if(v->size <=0 ){
+			return 1;
+		}
+	}
 	/* FIXME:  You will change this return value*/
-	return 1;
+	return 0;
 }
 
 /* 	Push an element onto the top of the stack
