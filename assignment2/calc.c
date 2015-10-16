@@ -81,6 +81,48 @@ void divide(struct DynArr *stack)
 	popDynArr(stack);
 	pushDynArr(stack, i/j);
 }
+void multiply(struct DynArr *stack){
+	double i =topDynArr(stack);
+	popDynArr(stack);
+	double j =topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, i*j);
+}
+void power(struct DynArr *stack){
+	double i,j;
+	i = topDynArr(stack);
+	popDynArr(stack);
+	j = topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, pow(i,j));
+}
+void square(struct DynArr*stack){
+	double i= topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, pow(i, 2));
+}
+void cube(struct DynArr*stack){
+	double i= topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, pow(i, 3));
+}
+void absolute(struct DynArr*stack){
+	double i= topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, fabs(i));
+}
+void squareroot(struct DynArr*stack){
+	double i = topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack ,sqrt(i));
+}
+void exponent(struct DynArr*stack){
+	double i = topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack ,exp(i));
+
+}
+
 
 double calculate(int numInputTokens, char **inputString)
 {
@@ -112,25 +154,30 @@ double calculate(int numInputTokens, char **inputString)
 			divide(stack);
 		else if(strcmp(s, "x") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Multiplying\n");
+			multiply(stack);
 		else if(strcmp(s, "^") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Power\n");
+			power(stack);
 		else if(strcmp(s, "^2") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Squaring\n");
+			// printf("Squaring\n");
+			square(stack);
 		else if(strcmp(s, "^3") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Cubing\n");
+			// printf("Cubing\n");
+			cube(stack);
 		else if(strcmp(s, "abs") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Absolute value\n");
+			// printf("Absolute value\n");
+			absolute(stack);
 		else if(strcmp(s, "sqrt") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Square root\n");
+			// printf("Square root\n");
+			squareroot(stack);
 		else if(strcmp(s, "exp") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Exponential\n");
+			// printf("Exponential\n");
+			exponent(stack);
 		else if(strcmp(s, "ln") == 0)
 			/* FIXME: replace printf with your own function */
 			printf("Natural Log\n");
