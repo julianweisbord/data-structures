@@ -42,11 +42,12 @@ int isNumber(char *s, double *num)
 void add (struct DynArr *stack)
 {
 	/* FIXME: You will write this function */
-	// if(stack->size >=2){
-	// 	int sum = stack->data[stack->size-1] + stack->data[stack->size-2];
-	// 	popDynArr(stack);
-	// 	popDynArr(stack);
-	// 	pushDynArr(stack, sum);
+	// main checks if there are less than 2 args
+	double i =topDynArr(stack);
+	popDynArr(stack);
+	double j =topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, i+j);
 	// }
 }
 
@@ -58,6 +59,12 @@ void add (struct DynArr *stack)
 void subtract(struct DynArr *stack)
 {
 	/* FIXME: You will write this function */
+	double i =topDynArr(stack);
+	popDynArr(stack);
+	double j =topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, i-j);
+
 }
 
 /*	param: stack the stack being manipulated
@@ -68,6 +75,11 @@ void subtract(struct DynArr *stack)
 void divide(struct DynArr *stack)
 {
 	/* FIXME: You will write this function */
+	double i =topDynArr(stack);
+	popDynArr(stack);
+	double j =topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, i/j);
 }
 
 double calculate(int numInputTokens, char **inputString)
@@ -153,8 +165,8 @@ int main(int argc , char** argv)
 {
 	// assume each argument is contained in the argv array
 	// argc-1 determines the number of operands + operators
-	if (argc == 1){
-		printf("Only one argument\n");
+	if (argc <= 2){
+		printf("Only one or less argument\n");
 		return 0;
 	}
 

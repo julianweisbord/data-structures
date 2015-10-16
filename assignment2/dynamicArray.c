@@ -307,7 +307,7 @@ void pushDynArr(DynArr *v, TYPE val)
 		}
 		++v->size;
 		v->data[v->size-1]=val;
-		printf("VAL: %1f\n",val);
+		// printf("VAL: %1f\n",val);
 
 	}
 }
