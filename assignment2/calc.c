@@ -122,6 +122,18 @@ void exponent(struct DynArr*stack){
 	pushDynArr(stack ,exp(i));
 
 }
+void ln(struct DynArr*stack){
+	double i = topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, log(i));
+
+}
+void logar(struct DynArr *stack){
+	double i = topDynArr(stack);
+	popDynArr(stack);
+	pushDynArr(stack, log10(i));
+}
+
 
 
 double calculate(int numInputTokens, char **inputString)
@@ -180,10 +192,10 @@ double calculate(int numInputTokens, char **inputString)
 			exponent(stack);
 		else if(strcmp(s, "ln") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Natural Log\n");
+			ln(stack);
 		else if(strcmp(s, "log") == 0)
 			/* FIXME: replace printf with your own function */
-			printf("Log\n");
+			logar(stack);
 		else
 		{
 			// FIXME: You need to develop the code here (when s is not an operator)
