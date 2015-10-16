@@ -42,6 +42,12 @@ int isNumber(char *s, double *num)
 void add (struct DynArr *stack)
 {
 	/* FIXME: You will write this function */
+	// if(stack->size >=2){
+	// 	int sum = stack->data[stack->size-1] + stack->data[stack->size-2];
+	// 	popDynArr(stack);
+	// 	popDynArr(stack);
+	// 	pushDynArr(stack, sum);
+	// }
 }
 
 /*	param: stack the stack being manipulated

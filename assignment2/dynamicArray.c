@@ -175,9 +175,9 @@ TYPE getDynArr(DynArr *v, int pos)
 			}
 		}
 	}
-
-	/* FIXME: you must change this return value */
 	return v->data[pos];
+	/* FIXME: you must change this return value */
+
 }
 
 /*	Put an item into the dynamic array at the specified location,
@@ -305,6 +305,7 @@ void pushDynArr(DynArr *v, TYPE val)
 			addDynArr(v, val); //double list function
 
 		}
+		++v->size;
 		v->data[v->size-1]=val;
 		printf("VAL: %1f\n",val);
 
@@ -373,6 +374,7 @@ int containsDynArr(DynArr *v, TYPE val)
 	if(v->data != NULL){
 		if(v->size > 0){
 			for(i= 0;i < v->size; ++i ){
+				printf("Element: %1f\n",v->data[i]);
 				if(v->data[i] == val){
 					return 1;
 				}
