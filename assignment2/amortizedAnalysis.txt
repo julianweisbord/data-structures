@@ -1,0 +1,26 @@
+1.
+push 8 elements so doubles to 16 add 8 to time
+copy 8 elements so add 16 to time
+double to 32
+copy 16 so add 32 to time
+total amount of time is 56 it is O(1+)
+
+2. 16 pushes
+add 8 items t=8
+copy 8 and add 2 t=10
+copy 10 and add 2 t=12
+copy 12 and add 2 t=14
+copy 14 add 2 t=16
+copy 16 and add 2 t=18
+copy 18 and add 2 t=20
+copy 20 and add 2 t=22
+copy 22 and add 2 t=24
+copy 24 and add 2 t=26
+copy 26 and add 2 t=28
+copy 28 and add 2 t=30
+copy 30 and add 2 t=32
+This appears to be O(n) complexity
+total time is 260
+3.
+This construct would run the most poorly when we are at n/2 and push and then pop.
+To avoid this we could shrink the capacity to half when it is n/4 times full or n/8
