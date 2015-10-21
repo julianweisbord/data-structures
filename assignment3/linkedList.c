@@ -68,8 +68,13 @@ void _addLinkBefore(struct linkedList *lst, struct DLink *l, TYPE v)
 	/* FIXME: you must write this */
 	if(lst != NULL){
 		if(l !=NULL){
-			l = malloc(sizeof(struct Dlink));
-			
+			l = malloc(sizeof(struct DLink));
+			new_node = malloc(sizeof(struct DLink));
+			new_node->next = l;
+			l->prev->next =new_node;
+			l->prev = new_node;
+			new_node->val = v;
+			// Is this right?
 		}
 	}
 
