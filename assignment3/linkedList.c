@@ -69,11 +69,11 @@ void _addLinkBefore(struct linkedList *lst, struct DLink *l, TYPE v)
 	if(lst != NULL){
 		if(l !=NULL){
 			l = malloc(sizeof(struct DLink));
-			new_node = malloc(sizeof(struct DLink));
+			struct DLink* new_node = malloc(sizeof(struct DLink));
 			new_node->next = l;
 			l->prev->next =new_node;
 			l->prev = new_node;
-			new_node->val = v;
+			new_node->value = v;
 			// Is this right?
 		}
 	}
@@ -83,7 +83,7 @@ void _addLinkBefore(struct linkedList *lst, struct DLink *l, TYPE v)
 /*
 	_removeLink
 	param: lst the linkedList
-	param: l the linke to be removed
+	param: l the link to be removed
 	pre: lst is not null
 	pre: l is not null
 	post: lst size is reduced by 1
@@ -92,6 +92,16 @@ void _removeLink(struct linkedList *lst, struct DLink *l)
 {
 
 	/* FIXME: you must write this */
+	if(lst != NULL){
+		if(l !=NULL){
+			if(l->next!=lst->lastLink){
+				l->prev = l->next;
+				l->next->prev = l->prev;
+				free(l);
+				--lst->size;
+			}
+		}
+	}
 
 }
 
@@ -104,7 +114,8 @@ void _removeLink(struct linkedList *lst, struct DLink *l)
 int isEmptyList(struct linkedList *lst) {
  	/* FIXME: you must write this */
 	/*temporary return value...you may need to change this */
-	return(1);
+	if(lst !=NULL)
+		return lst->size ==0;
 }
 
 /* De-allocate all links of the list
