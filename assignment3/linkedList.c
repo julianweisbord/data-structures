@@ -28,6 +28,13 @@ struct linkedList{
 
 void _initList (struct linkedList *lst) {
   /* FIXME: you must write this */
+	if(lst !=NULL){
+		lst->firstLink= malloc(sizeof(struct DLink));
+		lst->lastLink= malloc(sizeof(struct DLink));
+		lst->firstLink->next = lst->lastLink;
+		lst->lastLink->prev = lst->firstLink;
+		lst->size = 0;
+	}
 }
 
 /*
@@ -59,6 +66,12 @@ struct linkedList *createLinkedList()
 void _addLinkBefore(struct linkedList *lst, struct DLink *l, TYPE v)
 {
 	/* FIXME: you must write this */
+	if(lst != NULL){
+		if(l !=NULL){
+			l = malloc(sizeof(struct Dlink));
+			
+		}
+	}
 
 }
 
@@ -74,7 +87,7 @@ void _removeLink(struct linkedList *lst, struct DLink *l)
 {
 
 	/* FIXME: you must write this */
-	
+
 }
 
 /*
@@ -100,13 +113,13 @@ void freeLinkedList(struct linkedList *lst)
 	while(!isEmptyList(lst)) {
 		/* remove the link right after the first sentinel */
 		_removeLink(lst, lst->firstLink->next);
-	}		
+	}
 	/* remove the first and last sentinels */
 	free(lst->firstLink);
-	free(lst->lastLink);	
+	free(lst->lastLink);
 }
 
-/* 	Deallocate all the links and the linked list itself. 
+/* 	Deallocate all the links and the linked list itself.
 
 	param: 	v		pointer to the dynamic array
 	pre:	v is not null
@@ -144,7 +157,7 @@ void addFrontList(struct linkedList *lst, TYPE e)
 {
 
 	/* FIXME: you must write this */
-	
+
 }
 
 /*
@@ -155,7 +168,7 @@ void addFrontList(struct linkedList *lst, TYPE e)
 	post: lst is not empty, increased size by 1
 */
 void addBackList(struct linkedList *lst, TYPE e) {
-  
+
 	/* FIXME: you must write this */
 }
 
@@ -208,9 +221,9 @@ void removeFrontList(struct linkedList *lst) {
 	post: size reduced by 1
 */
 void removeBackList(struct linkedList *lst)
-{	
+{
 	/* FIXME: you must write this */
-	
+
 }
 
 
@@ -218,7 +231,7 @@ void removeBackList(struct linkedList *lst)
 	Stack Interface Functions
 ************************************************************************ */
 
-/* 
+/*
 	Add an item to the bag
 	param: 	lst		pointer to the bag
 	param: 	v		value to be added
