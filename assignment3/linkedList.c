@@ -181,6 +181,7 @@ void addFrontList(struct linkedList *lst, TYPE e)
 {
 
 	/* FIXME: you must write this */
+	assert(lst!=NULL);
 	_addLinkBefore(lst,lst->firstLink,e);
 
 }
@@ -195,6 +196,7 @@ void addFrontList(struct linkedList *lst, TYPE e)
 void addBackList(struct linkedList *lst, TYPE e) {
 
 	/* FIXME: you must write this */
+	assert(lst!=NULL);
 	_addLinkBefore(lst,lst->lastLink,e);
 }
 
@@ -227,7 +229,7 @@ TYPE backList(struct linkedList *lst)
 	/* FIXME: you must write this */
 	if(lst!=NULL){
 		if(lst->size!=0){
-			return lst->lastLink->value;//cant do this
+			return lst->lastLink->value;
 		}
 	}
 	return(1);
@@ -244,6 +246,9 @@ TYPE backList(struct linkedList *lst)
 */
 void removeFrontList(struct linkedList *lst) {
    	/* FIXME: you must write this */
+		assert(!isEmptyList(lst));
+		_removeLink(lst,lst->firstLink);
+
 
 }
 
@@ -257,7 +262,8 @@ void removeFrontList(struct linkedList *lst) {
 void removeBackList(struct linkedList *lst)
 {
 	/* FIXME: you must write this */
-
+	assert(!isEmptyList(lst));
+	_removeLink(lst,lst->lastLink);
 }
 
 
@@ -275,6 +281,9 @@ void removeBackList(struct linkedList *lst)
 void addList(struct linkedList *lst, TYPE v)
 {
 	/* FIXME: you must write this */
+	assert(lst!=NULL);
+	addBackList(lst,v);
+
 
 }
 
@@ -291,8 +300,13 @@ void addList(struct linkedList *lst, TYPE v)
 */
 int containsList (struct linkedList *lst, TYPE e) {
 	/* FIXME: you must write this */
-	/*temporary return value...you may need to change this */
-	return(1);
+	struct DLink *current = lst->firstLink;
+	for(current; current!=lst->lastLink; current = current->next){
+		if(current->value == e)
+			return 1;
+	}
+
+	return 0;
 }
 
 /*	Removes the first occurrence of the specified value from the collection
@@ -307,4 +321,13 @@ int containsList (struct linkedList *lst, TYPE e) {
 */
 void removeList (struct linkedList *lst, TYPE e) {
 	/* FIXME: you must write this */
+	assert(lst!=NULL);
+	if(!isEmptyList(lst)){
+		struct DLink *current = lst->firstLink;
+		for(current; current!=lst->lastLink; current = current->next){
+			if(current->value == e){
+				_removeLink(lst,current);
+			}
+		}
+	}
 }
