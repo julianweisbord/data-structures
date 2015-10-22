@@ -68,13 +68,12 @@ void _addLinkBefore(struct linkedList *lst, struct DLink *l, TYPE v)
 	/* FIXME: you must write this */
 	if(lst != NULL){
 		if(l !=NULL){
-			l = malloc(sizeof(struct DLink));
 			struct DLink* new_node = malloc(sizeof(struct DLink));
 			new_node->next = l;
+			new_node->prev= l->prev;
 			l->prev->next =new_node;
 			l->prev = new_node;
 			new_node->value = v;
-			// Is this right?
 		}
 	}
 
@@ -90,7 +89,6 @@ void _addLinkBefore(struct linkedList *lst, struct DLink *l, TYPE v)
 */
 void _removeLink(struct linkedList *lst, struct DLink *l)
 {
-
 	/* FIXME: you must write this */
 	if(lst != NULL){
 		if(l !=NULL){
@@ -113,9 +111,12 @@ void _removeLink(struct linkedList *lst, struct DLink *l)
 */
 int isEmptyList(struct linkedList *lst) {
  	/* FIXME: you must write this */
-	/*temporary return value...you may need to change this */
-	if(lst !=NULL)
-		return lst->size ==0;
+	if(lst !=NULL){
+		if(lst->size ==0)
+			return 0;
+		else
+			return 1;
+	}
 }
 
 /* De-allocate all links of the list
@@ -155,6 +156,13 @@ void deleteLinkedList(struct linkedList *lst)
 void _printList(struct linkedList* lst)
 {
 	/* FIXME: you must write this */
+	if(lst!=NULL){
+		struct DLink *current = lst->firstLink->next;
+		for(current; current!=lst->lastLink; current= current->next){
+			printf("List value: %d",current->value);
+
+		}
+	}
 
 }
 
@@ -173,6 +181,7 @@ void addFrontList(struct linkedList *lst, TYPE e)
 {
 
 	/* FIXME: you must write this */
+	_addLinkBefore(lst,lst->firstLink,e);
 
 }
 
@@ -186,6 +195,7 @@ void addFrontList(struct linkedList *lst, TYPE e)
 void addBackList(struct linkedList *lst, TYPE e) {
 
 	/* FIXME: you must write this */
+	_addLinkBefore(lst,lst->lastLink,e);
 }
 
 /*
@@ -197,7 +207,11 @@ void addBackList(struct linkedList *lst, TYPE e) {
 */
 TYPE frontList (struct linkedList *lst) {
 	/* FIXME: you must write this */
-	/*temporary return value...you may need to change this */
+	if(lst!=NULL){
+		if(lst->size!=0){
+			return lst->firstLink->value;//cant do this
+		}
+	}
 	return(1);
 }
 
@@ -211,7 +225,11 @@ TYPE frontList (struct linkedList *lst) {
 TYPE backList(struct linkedList *lst)
 {
 	/* FIXME: you must write this */
-	/*temporary return value...you may need to change this */
+	if(lst!=NULL){
+		if(lst->size!=0){
+			return lst->lastLink->value;//cant do this
+		}
+	}
 	return(1);
 }
 

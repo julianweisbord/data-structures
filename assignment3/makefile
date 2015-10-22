@@ -1,14 +1,15 @@
 default: prog
 
-cirListDeque.o: cirListDeque.c cirListDeque.h
-	gcc -Wall -g -std=c99 -c cirListDeque.c	
+linkedList.o: linkedList.h linkedList.c
+	gcc -Wall -g -std=c99 -c linkedList.c
 
-testCirListDeque.o: cirListDeque.h testCirListDeque.c
-	gcc -Wall -g -std=c99 -c testCirListDeque.c
+testLinkedList.o: linkedListMain.c testLinkedList.c
+	gcc -Wall -g -std=c99 -c linkedListMain.c testLinkedList.c
 
-prog: cirListDeque.o testCirListDeque.o
-	gcc -Wall -g -std=c99 -o prog cirListDeque.o testCirListDeque.o
-		
+prog: linkedList.o testLinkedList.o
+	gcc -Wall -g -std=c99 -o prog linkedList.o testLinkedList.o
+
 clean:
-	rm cirListDeque.o
-	rm testCirListDeque.o
+	rm linkedList.o
+	rm testLinkedList.o
+	rm prog
