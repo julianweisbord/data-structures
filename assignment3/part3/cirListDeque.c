@@ -43,7 +43,9 @@ void _initCirListDeque (struct cirListDeque *q)
 {
   	/* FIXME: you must write this */
 		assert(q!=NULL);
-		q->Sentinel= malloc(sizeof(struct DLink));
+		q->Sentinel= _createLink(TYPE_SENTINEL_VALUE);
+		q->Sentinel->next = q->Sentinel;
+		q->Sentinel->prev = q->Sentinel;
 		q->size =0;
 }
 
@@ -69,9 +71,11 @@ struct cirListDeque *createCirListDeque()
 struct DLink * _createLink (TYPE val)
 {
 	/* FIXME: you must write this */
-
+	struct DLink* node= malloc(sizeof(struct DLink));
+	assert(node!=NULL);
+	node->value = val;
 	/*temporary return value..you may need to change it*/
-	return(0);
+	return node;
 
 }
 
@@ -88,7 +92,15 @@ struct DLink * _createLink (TYPE val)
 void _addLinkAfter(struct cirListDeque *q, struct DLink *lnk, TYPE v)
 {
 	/* FIXME: you must write this */
-
+	assert(q!=NULL);
+	assert(lnk!=NULL);
+	assert(lnk->next!=NULL);
+	assert(lnk->prev!=NULL);
+	struct DLink* new_node = _createLink(v);
+	new_node->next = lnk->next;
+	new_node->prev=lnk;
+	lnk->next= new_node;
+	++q->size;
 }
 
 /* Adds a link to the back of the deque
@@ -101,6 +113,8 @@ void _addLinkAfter(struct cirListDeque *q, struct DLink *lnk, TYPE v)
 void addBackCirListDeque (struct cirListDeque *q, TYPE val)
 {
 	/* FIXME: you must write this */
+	assert(q!=NULL);
+	_addLinkAfter(q,q->Sentinel->prev,val);
 
 }
 
@@ -114,6 +128,9 @@ void addBackCirListDeque (struct cirListDeque *q, TYPE val)
 void addFrontCirListDeque(struct cirListDeque *q, TYPE val)
 {
 	/* FIXME: you must write this */
+	assert(q!=NULL);
+	_addLinkAfter(q,q->Sentinel,val);
+
 
 }
 
