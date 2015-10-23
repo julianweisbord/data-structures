@@ -144,8 +144,10 @@ void addFrontCirListDeque(struct cirListDeque *q, TYPE val)
 TYPE frontCirListDeque(struct cirListDeque *q)
 {
 	/* FIXME: you must write this */
-	/*temporary return value..you may need to change it*/
-	return(1);
+	assert(q!=NULL);
+	assert(!isEmptyCirListDeque(q));
+
+	return q->Sentinel->next->value;
 }
 
 /* Get the value of the back of the deque
@@ -159,7 +161,10 @@ TYPE backCirListDeque(struct cirListDeque *q)
 {
 	/* FIXME: you must write this */
 	/*temporary return value..you may need to change it*/
-	return(1);
+	assert(q!=NULL);
+	assert(!isEmptyCirListDeque(q));
+
+	return q->Sentinel->prev->value;
 }
 
 /* Remove a link from the deque
@@ -172,6 +177,12 @@ TYPE backCirListDeque(struct cirListDeque *q)
 void _removeLink(struct cirListDeque *q, struct DLink *lnk)
 {
 	/* FIXME: you must write this */
+	assert(q!=NULL);
+	assert(!isEmptyCirListDeque(q));
+	lnk->prev->next = lnk->next;
+	lnk->next->prev = lnk->prev;
+	free(lnk);
+	--q->size;
 
 }
 
@@ -183,6 +194,9 @@ void _removeLink(struct cirListDeque *q, struct DLink *lnk)
 */
 void removeFrontCirListDeque (struct cirListDeque *q) {
 	/* FIXME: you must write this */
+	assert(q!=NULL);
+	assert(!isEmptyCirListDeque(q));
+	_removeLink(q, q->Sentinel->next);
 
 }
 
@@ -196,6 +210,7 @@ void removeFrontCirListDeque (struct cirListDeque *q) {
 void removeBackCirListDeque(struct cirListDeque *q)
 {
   	/* FIXME: you must write this */
+		_removeLink(q,q->Sentinel->prev);
 }
 
 /* De-allocate all links of the deque
@@ -207,7 +222,15 @@ void removeBackCirListDeque(struct cirListDeque *q)
 void freeCirListDeque(struct cirListDeque *q)
 {
 	/* FIXME: you must write this */
+	struct DLink *node;
+	struct DLink*sent = q->Sentinel;
+	while(sent->next->value !=TYPE_SENTINEL_VALUE){
+		node =sent;
+		sent = sent->next;
+		free(node);
 
+	}
+	free(q->Sentinel);
 }
 
 /* 	Deallocate all the links and the deque itself.
@@ -230,8 +253,8 @@ void deleteCirListDeque(struct cirListDeque *q) {
 */
 int isEmptyCirListDeque(struct cirListDeque *q) {
   	/* FIXME: you must write this */
-	/*temporary return value..you may need to change it*/
-	return(1);
+
+	return (q->size==0)? 1:0;
 }
 
 /* Print the links in the deque from front to back
@@ -243,6 +266,14 @@ int isEmptyCirListDeque(struct cirListDeque *q) {
 void printCirListDeque(struct cirListDeque *q)
 {
 	/* FIXME: you must write this */
+	assert(q!=NULL);
+	assert(!isEmptyCirListDeque(q));
+	struct DLink *current = q->Sentinel;
+	while(current->next!=q->Sentinel){
+		current =current->next;
+		printf("node value: %d\n", current->value);
+
+	}
 
 }
 
