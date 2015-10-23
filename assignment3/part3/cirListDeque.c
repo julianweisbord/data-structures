@@ -210,6 +210,8 @@ void removeFrontCirListDeque (struct cirListDeque *q) {
 void removeBackCirListDeque(struct cirListDeque *q)
 {
   	/* FIXME: you must write this */
+		assert(q!=NULL);
+		assert(!isEmptyCirListDeque(q));
 		_removeLink(q,q->Sentinel->prev);
 }
 
@@ -271,7 +273,7 @@ void printCirListDeque(struct cirListDeque *q)
 	struct DLink *current = q->Sentinel;
 	while(current->next!=q->Sentinel){
 		current =current->next;
-		printf("node value: %d\n", current->value);
+		printf("node value: %1f\n", current->value);
 
 	}
 
@@ -286,5 +288,25 @@ void printCirListDeque(struct cirListDeque *q)
 void reverseCirListDeque(struct cirListDeque *q)
 {
 	/* FIXME: you must write this */
+	assert(q !=NULL);
+  assert(!isEmptyCirListDeque(q));
+
+  struct DLink* node;
+  struct DLink* node2;
+
+  node = q -> Sentinel -> next;
+  q -> Sentinel -> prev = node;
+
+  do
+  {
+       node2 = node -> next;
+       if(node2 -> next == q -> Sentinel)
+           q -> Sentinel -> next = node2;
+
+       node -> next = node -> prev;
+       node -> prev = node2;
+       node = node2;
+  }while(node != q -> Sentinel);
+
 
 }
