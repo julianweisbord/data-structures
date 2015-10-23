@@ -11,7 +11,7 @@ struct DLink {
 	struct DLink * prev;/* pointer to the previous link */
 };
 
-# define TYPE_SENTINEL_VALUE DBL_MAX 
+# define TYPE_SENTINEL_VALUE DBL_MAX
 
 
 /* ************************************************************************
@@ -39,14 +39,17 @@ void _removeLink(struct cirListDeque *q, struct DLink *lnk);
 	pre:	q is not null
 	post:	q->Sentinel is allocated and q->size equals zero
 */
-void _initCirListDeque (struct cirListDeque *q) 
+void _initCirListDeque (struct cirListDeque *q)
 {
-  	/* FIXME: you must write this */	 
+  	/* FIXME: you must write this */
+		assert(q!=NULL);
+		q->Sentinel= malloc(sizeof(struct DLink));
+		q->size =0;
 }
 
 /*
  create a new circular list deque
- 
+
  */
 
 struct cirListDeque *createCirListDeque()
@@ -68,7 +71,7 @@ struct DLink * _createLink (TYPE val)
 	/* FIXME: you must write this */
 
 	/*temporary return value..you may need to change it*/
-	return(0);	 
+	return(0);
 
 }
 
@@ -79,12 +82,12 @@ struct DLink * _createLink (TYPE val)
 	param: 	v		value of the new link to be added after the existing link
 	pre:	q is not null
 	pre: 	lnk is not null
-	pre:	lnk is in the deque 
+	pre:	lnk is in the deque
 	post:	the new link is added into the deque after the existing link
 */
 void _addLinkAfter(struct cirListDeque *q, struct DLink *lnk, TYPE v)
 {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 
 }
 
@@ -95,9 +98,9 @@ void _addLinkAfter(struct cirListDeque *q, struct DLink *lnk, TYPE v)
 	pre:	q is not null
 	post:	a link storing val is added to the back of the deque
 */
-void addBackCirListDeque (struct cirListDeque *q, TYPE val) 
+void addBackCirListDeque (struct cirListDeque *q, TYPE val)
 {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 
 }
 
@@ -110,7 +113,7 @@ void addBackCirListDeque (struct cirListDeque *q, TYPE val)
 */
 void addFrontCirListDeque(struct cirListDeque *q, TYPE val)
 {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 
 }
 
@@ -121,9 +124,9 @@ void addFrontCirListDeque(struct cirListDeque *q, TYPE val)
 	post:	none
 	ret: 	value of the front of the deque
 */
-TYPE frontCirListDeque(struct cirListDeque *q) 
+TYPE frontCirListDeque(struct cirListDeque *q)
 {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 	/*temporary return value..you may need to change it*/
 	return(1);
 }
@@ -137,7 +140,7 @@ TYPE frontCirListDeque(struct cirListDeque *q)
 */
 TYPE backCirListDeque(struct cirListDeque *q)
 {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 	/*temporary return value..you may need to change it*/
 	return(1);
 }
@@ -151,7 +154,7 @@ TYPE backCirListDeque(struct cirListDeque *q)
 */
 void _removeLink(struct cirListDeque *q, struct DLink *lnk)
 {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 
 }
 
@@ -162,7 +165,7 @@ void _removeLink(struct cirListDeque *q, struct DLink *lnk)
 	post:	the front is removed from the deque
 */
 void removeFrontCirListDeque (struct cirListDeque *q) {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 
 }
 
@@ -175,7 +178,7 @@ void removeFrontCirListDeque (struct cirListDeque *q) {
 */
 void removeBackCirListDeque(struct cirListDeque *q)
 {
-  	/* FIXME: you must write this */	 
+  	/* FIXME: you must write this */
 }
 
 /* De-allocate all links of the deque
@@ -186,11 +189,11 @@ void removeBackCirListDeque(struct cirListDeque *q)
 */
 void freeCirListDeque(struct cirListDeque *q)
 {
-	/* FIXME: you must write this */	 
-	
+	/* FIXME: you must write this */
+
 }
 
-/* 	Deallocate all the links and the deque itself. 
+/* 	Deallocate all the links and the deque itself.
 
 	param: 	v		pointer to the dynamic array
 	pre:	v is not null
@@ -222,7 +225,7 @@ int isEmptyCirListDeque(struct cirListDeque *q) {
 */
 void printCirListDeque(struct cirListDeque *q)
 {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 
 }
 
@@ -234,6 +237,6 @@ void printCirListDeque(struct cirListDeque *q)
 */
 void reverseCirListDeque(struct cirListDeque *q)
 {
-	/* FIXME: you must write this */	 
+	/* FIXME: you must write this */
 
 }

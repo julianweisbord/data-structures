@@ -1,14 +1,15 @@
 default: prog2
 
-cirListDeque.o: cirListDeque.c cirListDeque.h
-	gcc -Wall -g -std=c99 -c cirListDeque.c
+dynamicArray.o: dynamicArray.h dynamicArray.c
+	gcc -Wall -g -std=c99 -c dynamicArray.c
 
-testCirListDeque.o: cirListDeque.h testCirListDeque.c
-	gcc -Wall -g -std=c99 -c testCirListDeque.c
+dynamicArrayMain.o: dynamicArrayMain.c
+	gcc -Wall -g -std=c99 -c dynamicArrayMain.c
 
-prog: cirListDeque.o testCirListDeque.o
-	gcc -Wall -g -std=c99 -o prog cirListDeque.o testCirListDeque.o
+prog2: dynamicArray.o dynamicArrayMain.o
+	gcc -Wall -g -std=c99 -o prog2 dynamicArray.o dynamicArrayMain.o
 
 clean:
-	rm cirListDeque.o
-	rm testCirListDeque.o
+	rm linkedList.o
+	rm testLinkedList.o
+	rm prog
