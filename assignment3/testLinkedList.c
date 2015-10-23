@@ -3,41 +3,57 @@
 #include <stdlib.h>
 #include <time.h>
 
-// double getMilliseconds() {
-//    return 1000.0 * clock() / CLOCKS_PER_SEC;
-// }
 
 int main(int argc, char* argv[]) {
-
 	/* Test your linked list in here! */
 
 	printf("Hello from test code!\n");
 
-  struct linkedList *b;
-  int n, i;
-  double t1, t2;
+	struct linkedList *ll = createLinkedList();
 
-  for(n=0; n < 10; ++n) /* outer loop */
-  {
+  printf("\nTesting addBackList...\n");
+  printf("Adding 4 to back...\n");
+  addBackList(ll, 4);
+  printf("Adding 2 to back...\n");
+  addBackList(ll, 2);
+  printf("The lists contents:\n");
+  _printList(ll);
 
-    b = createLinkedList();
+  printf("\nTesting addFrontList...\n");
+  printf("Adding 32 to front...\n");
+  addFrontList(ll, 32);
+  printf("Adding 7 to front...\n");
+  addFrontList(ll, 7);
+  printf("The lists contents:\n");
+  _printList(ll);
 
-    for( i = 0 ; i < n; i++) {
-          addList(b, (TYPE)i); /*Add elements*/
-    }
-    _printList(b);
-    // t1 = getMilliseconds();/*Time before contains()*/
 
-    for(i=0; i<n; i++) {
-          containsList(b, i);
-    }
 
-    // t2 = getMilliseconds();/*Time after contains()*/
+  printf("\nTesting removeFrontList...\n");
+  printf("Removing 7 from front...\n");
+  removeFrontList(ll);
+  // test(sizeLinkedList(ll) == 3, "Removed one element");
+  // test(frontList(ll) == 32, "Front should be 32");
+  printf("The lists contents:\n");
+  _printList(ll);
 
-    printf("Time for running contains() ms\n");
+  printf("\nTesting removeBackList...\n");
+  printf("Removing 2 from back...\n");
+  removeBackList(ll);
+  // test(sizeLinkedList(ll) == 2, "Removed one element");
+  // test(backList(ll) == 4, "Back should be 4");
+  printf("The list contents:\n");
+  _printList(ll);
 
-    /* delete DynArr */
-    deleteLinkedList(b);
-  }
+  printf("\nTesting removeList...\n");
+  printf("Removing 32 from list...\n");
+  removeList(ll, 32);
+	_printList(ll);
+  // test(sizeLinkedList(ll) == 1, "Removed one element");
+  printf("Removeing 4 from list...\n");
+  removeList(ll, 4);
+  // test(isEmptyList(ll), "List is now empty");
+  printf("List is empty but will print list anyway: \n");
+	_printList(ll);
   return 0;
 }
