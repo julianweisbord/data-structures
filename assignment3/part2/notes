@@ -1,0 +1,9 @@
+Dynamic Array:
+Time for running contains() on 1000 elements: 10 ms
+Time for running contains() on 2000 elements: 50 ms
+Time for running contains() on 4000 elements: 180 ms
+Time for running contains() on 8000 elements: 720 ms
+Time for running contains() on 16000 elements: 2900 ms
+Time for running contains() on 32000 elements: 11640 ms
+Time for running contains() on 64000 elements: 46340 ms
+Time for running contains() on 128000 elements: 183150 ms
