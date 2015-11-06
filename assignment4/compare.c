@@ -26,13 +26,15 @@
 int compare(TYPE left, TYPE right)
 {
     /*FIXME: write this*/
-	if((struct data*)left->number < (struct data*)right->number)){
+	if(((struct data*)left)->number < ((struct data*)right)->number){
 		return 1;//right should be greater than left
 	}
-	else if((struct data*)left->number > (struct data*)right->number)){
+	else if(((struct data*)left)->number > ((struct data*)right)->number){
 		return -1;//right should be greater than left
 	}
-	return 0;
+	else if(((struct data*)left)->number == ((struct data*)right)->number){
+		return 0;
+	}
 
 }
 

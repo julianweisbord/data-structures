@@ -16,6 +16,17 @@
 # define TYPE      void*
 # endif
 
+struct Node {
+    TYPE         val;
+    struct Node *left;
+    struct Node *right;
+};
+
+struct BSTree {
+    struct Node *root;
+    int          cnt;
+};
+
 /* function used to compare two TYPE values to each other, define this in your compare.c file */
 int compare(TYPE left, TYPE right);
 /* function used to print TYPE values, define this in your compare.c file */
