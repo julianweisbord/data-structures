@@ -114,6 +114,32 @@ int sizeBSTree(struct BSTree *tree) { return tree->cnt; }
 struct Node *_addNode(struct Node *cur, TYPE val)
 {
     assert(val!=NULL);
+
+    if(compare(cur,val)==1){
+      //go right
+      if(cur->left!=NULL)
+        return _addNode(cur->left, val);
+      else{
+          //put node here
+          cur = malloc(sizeof(struct Node));
+          cur->val = val;
+          cur->right = NULL;
+          cur->left = NULL;
+          return cur;
+      }
+    }
+    if(compare(cur,val)==-1){
+      if(cur->left!=NULL)
+        return _addNode(cur->right,val);
+      else{
+          //put node here
+          cur = malloc(sizeof(struct Node));
+          cur->val = val;
+          cur->right = NULL;
+          cur->left = NULL;
+          return cur;
+      }
+    }
     /*write this*/
     return NULL;
 }
@@ -187,7 +213,11 @@ int containsBSTree(struct BSTree *tree, TYPE val)
 TYPE _leftMost(struct Node *cur)
 {
     /*write this*/
-    return NULL;
+    if(cur->left == NULL){
+      return cur->val;
+    }
+    else
+      return _leftMost(cur->left);
 }
 
 
@@ -206,7 +236,17 @@ TYPE _leftMost(struct Node *cur)
 struct Node *_removeLeftMost(struct Node *cur)
 {
     /*write this*/
-    return NULL;
+    assert(cur!=NULL);
+
+    if(cur->left==NULL){
+      struct Node * temp =cur;
+      free(temp);
+      return cur->right;
+    }
+    else{
+      cur->left= _removeLeftMost(cur->left);
+      return cur;
+    }
 }
 /*
   recursive helper function to remove a node from the tree
