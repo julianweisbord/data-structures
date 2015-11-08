@@ -1,0 +1,285 @@
+--------------------------------------------------------------------------------
+Command:            ./a.out
+Massif arguments:   (none)
+ms_print arguments: massif.out.18083
+--------------------------------------------------------------------------------
+
+
+    MB
+4.883^                                                                       #
+     |                  :::::::::::::::::::::::::::::::::::::::::::::::::::::#
+     |                  :                                                    #
+     |                  :                                                    #
+     |                  :                                                    #
+     |                  :                                                    #
+     |                  :                                                    #
+     |                  :                                                    #
+     |                  :                                                    #
+     |                  :                                                    #
+     |                  @                                                    #
+     |    ::::::::::::::@                                                    #
+     |    :             @                                                    #
+     |    :             @                                                    #
+     |    :             @                                                    #
+     |    @             @                                                    #
+     | :::@             @                                                    #
+     | :  @             @                                                    #
+     |:@  @             @                                                    #
+     |@@  @             @                                                    #
+   0 +----------------------------------------------------------------------->Gi
+     0                                                                   111.9
+
+Number of snapshots: 83
+ Detailed snapshots: [2, 4, 6, 8, 11, 16, 19, 24, 30, 35, 45 (peak), 51, 61, 71, 81]
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0
+  1        202,622           39,640           23,784        15,856            0
+  2      5,745,527           40,120           24,072        16,048            0
+60.00% (24,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.82% (24,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.82% (24,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.82% (24,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.82% (24,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.18% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  3      6,031,058           77,600           46,560        31,040            0
+  4     28,109,666           80,120           48,072        32,048            0
+60.00% (48,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.91% (48,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.91% (48,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.91% (48,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.91% (48,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.09% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  5     28,681,002          155,240           93,144        62,096            0
+  6    116,834,862          160,120           96,072        64,048            0
+60.00% (96,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.96% (96,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.96% (96,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.96% (96,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.96% (96,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.04% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  7    117,977,493          310,400          186,240       124,160            0
+  8    470,282,285          320,120          192,072       128,048            0
+60.00% (192,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.98% (192,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.98% (192,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.98% (192,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.98% (192,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.02% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  9    471,304,146          139,440           83,664        55,776            0
+ 10    472,594,386          630,960          378,576       252,384            0
+ 11  1,881,173,958          640,120          384,072       256,048            0
+60.00% (384,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.99% (384,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.99% (384,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.99% (384,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.99% (384,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.01% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 12  1,882,034,630          220,240          132,144        88,096            0
+ 13  1,883,432,679          360,720          216,432       144,288            0
+ 14  1,884,292,839          688,400          413,040       275,360            0
+ 15  1,885,798,119        1,261,840          757,104       504,736            0
+ 16  7,518,953,604        1,280,120          768,072       512,048            0
+60.00% (768,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.99% (768,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.99% (768,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.99% (768,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.99% (768,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.01% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 17  7,519,814,276          860,240          516,144       344,096            0
+ 18  7,520,863,056          348,640          209,184       139,456            0
+ 19  7,521,669,625           35,120           21,072        14,048            0
+60.00% (21,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.79% (21,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.79% (21,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.79% (21,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.79% (21,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.21% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 20  7,523,282,425          649,520          389,712       259,808            0
+ 21  7,524,895,225        1,263,920          758,352       505,568            0
+ 22  7,526,508,025        1,878,320        1,126,992       751,328            0
+ 23  7,528,120,825        2,492,720        1,495,632       997,088            0
+ 24 30,058,509,506        2,560,120        1,536,072     1,024,048            0
+60.00% (1,536,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->60.00% (1,536,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->60.00% (1,536,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->60.00% (1,536,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->60.00% (1,536,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.00% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 25 30,059,316,058        2,166,640        1,299,984       866,656            0
+ 26 30,060,727,524        1,478,120          886,872       591,248            0
+ 27 30,061,538,012        1,082,760          649,656       433,104            0
+ 28 30,062,348,500          687,400          412,440       274,960            0
+ 29 30,063,766,892            3,640            2,184         1,456            0
+ 30 30,064,577,492          312,440          187,464       124,976            0
+60.00% (187,464B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.98% (187,392B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.98% (187,392B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.98% (187,392B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.98% (187,392B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.02% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 31 30,065,388,092          621,240          372,744       248,496            0
+ 32 30,066,198,692          930,040          558,024       372,016            0
+ 33 30,067,009,292        1,238,840          743,304       495,536            0
+ 34 30,067,819,892        1,547,640          928,584       619,056            0
+ 35 30,068,630,492        1,856,440        1,113,864       742,576            0
+60.00% (1,113,864B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->60.00% (1,113,792B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->60.00% (1,113,792B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->60.00% (1,113,792B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->60.00% (1,113,792B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.00% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 36 30,069,441,092        2,165,240        1,299,144       866,096            0
+ 37 30,070,859,642        2,705,640        1,623,384     1,082,256            0
+ 38 30,071,670,242        3,014,440        1,808,664     1,205,776            0
+ 39 30,072,480,842        3,323,240        1,993,944     1,329,296            0
+ 40 30,073,291,442        3,632,040        2,179,224     1,452,816            0
+ 41 30,074,102,042        3,940,840        2,364,504     1,576,336            0
+ 42 30,074,912,642        4,249,640        2,549,784     1,699,856            0
+ 43 30,075,723,242        4,558,440        2,735,064     1,823,376            0
+ 44 30,077,141,792        5,098,840        3,059,304     2,039,536            0
+ 45 120,193,617,655        5,120,120        3,072,072     2,048,048            0
+60.00% (3,072,072B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->60.00% (3,072,000B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->60.00% (3,072,000B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->60.00% (3,072,000B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->60.00% (3,072,000B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.00% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 46 120,194,428,143        4,724,720        2,834,832     1,889,888            0
+ 47 120,195,238,631        4,329,360        2,597,616     1,731,744            0
+ 48 120,196,049,119        3,934,000        2,360,400     1,573,600            0
+ 49 120,197,264,851        3,340,960        2,004,576     1,336,384            0
+ 50 120,197,467,473        3,242,120        1,945,272     1,296,848            0
+ 51 120,197,670,095        3,143,280        1,885,968     1,257,312            0
+60.00% (1,885,968B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->60.00% (1,885,896B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->60.00% (1,885,896B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->60.00% (1,885,896B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->60.00% (1,885,896B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.00% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 52 120,197,872,717        3,044,440        1,826,664     1,217,776            0
+ 53 120,198,075,339        2,945,600        1,767,360     1,178,240            0
+ 54 120,198,277,961        2,846,760        1,708,056     1,138,704            0
+ 55 120,198,480,583        2,747,920        1,648,752     1,099,168            0
+ 56 120,198,683,205        2,649,080        1,589,448     1,059,632            0
+ 57 120,198,885,827        2,550,240        1,530,144     1,020,096            0
+ 58 120,199,088,449        2,451,400        1,470,840       980,560            0
+ 59 120,199,291,071        2,352,560        1,411,536       941,024            0
+ 60 120,199,493,693        2,253,720        1,352,232       901,488            0
+ 61 120,199,696,315        2,154,880        1,292,928       861,952            0
+60.00% (1,292,928B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->60.00% (1,292,856B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->60.00% (1,292,856B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->60.00% (1,292,856B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->60.00% (1,292,856B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.00% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 62 120,199,898,937        2,056,040        1,233,624       822,416            0
+ 63 120,200,101,559        1,957,200        1,174,320       782,880            0
+ 64 120,200,304,181        1,858,360        1,115,016       743,344            0
+ 65 120,200,506,803        1,759,520        1,055,712       703,808            0
+ 66 120,200,709,425        1,660,680          996,408       664,272            0
+ 67 120,200,912,047        1,561,840          937,104       624,736            0
+ 68 120,201,114,669        1,463,000          877,800       585,200            0
+ 69 120,201,317,291        1,364,160          818,496       545,664            0
+ 70 120,201,519,913        1,265,320          759,192       506,128            0
+ 71 120,201,722,535        1,166,480          699,888       466,592            0
+60.00% (699,888B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.99% (699,816B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.99% (699,816B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.99% (699,816B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.99% (699,816B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.01% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 72 120,201,925,157        1,067,640          640,584       427,056            0
+ 73 120,202,127,779          968,800          581,280       387,520            0
+ 74 120,202,330,401          869,960          521,976       347,984            0
+ 75 120,202,533,023          771,120          462,672       308,448            0
+ 76 120,202,735,645          672,280          403,368       268,912            0
+ 77 120,202,938,267          573,440          344,064       229,376            0
+ 78 120,203,140,889          474,600          284,760       189,840            0
+ 79 120,203,343,511          375,760          225,456       150,304            0
+ 80 120,203,546,133          276,920          166,152       110,768            0
+ 81 120,203,748,755          178,080          106,848        71,232            0
+60.00% (106,848B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.96% (106,776B) 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+| ->59.96% (106,776B) 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|   ->59.96% (106,776B) 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|     ->59.96% (106,776B) 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+|       
+->00.04% (72B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 82 120,203,951,377           79,240           47,544        31,696            0

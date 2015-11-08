@@ -1,0 +1,757 @@
+desc: (none)
+cmd: ./a.out
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=202622
+mem_heap_B=23784
+mem_heap_extra_B=15856
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=5745527
+mem_heap_B=24072
+mem_heap_extra_B=16048
+mem_stacks_B=0
+heap_tree=detailed
+n2: 24072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 24000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 24000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 24000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 24000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=3
+#-----------
+time=6031058
+mem_heap_B=46560
+mem_heap_extra_B=31040
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=28109666
+mem_heap_B=48072
+mem_heap_extra_B=32048
+mem_stacks_B=0
+heap_tree=detailed
+n2: 48072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 48000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 48000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 48000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 48000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=5
+#-----------
+time=28681002
+mem_heap_B=93144
+mem_heap_extra_B=62096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=116834862
+mem_heap_B=96072
+mem_heap_extra_B=64048
+mem_stacks_B=0
+heap_tree=detailed
+n2: 96072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 96000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 96000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 96000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 96000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=7
+#-----------
+time=117977493
+mem_heap_B=186240
+mem_heap_extra_B=124160
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=470282285
+mem_heap_B=192072
+mem_heap_extra_B=128048
+mem_stacks_B=0
+heap_tree=detailed
+n2: 192072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 192000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 192000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 192000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 192000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=9
+#-----------
+time=471304146
+mem_heap_B=83664
+mem_heap_extra_B=55776
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=472594386
+mem_heap_B=378576
+mem_heap_extra_B=252384
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=1881173958
+mem_heap_B=384072
+mem_heap_extra_B=256048
+mem_stacks_B=0
+heap_tree=detailed
+n2: 384072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 384000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 384000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 384000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 384000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=12
+#-----------
+time=1882034630
+mem_heap_B=132144
+mem_heap_extra_B=88096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=1883432679
+mem_heap_B=216432
+mem_heap_extra_B=144288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=1884292839
+mem_heap_B=413040
+mem_heap_extra_B=275360
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=1885798119
+mem_heap_B=757104
+mem_heap_extra_B=504736
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=7518953604
+mem_heap_B=768072
+mem_heap_extra_B=512048
+mem_stacks_B=0
+heap_tree=detailed
+n2: 768072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 768000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 768000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 768000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 768000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=17
+#-----------
+time=7519814276
+mem_heap_B=516144
+mem_heap_extra_B=344096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=7520863056
+mem_heap_B=209184
+mem_heap_extra_B=139456
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=7521669625
+mem_heap_B=21072
+mem_heap_extra_B=14048
+mem_stacks_B=0
+heap_tree=detailed
+n2: 21072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 21000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 21000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 21000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 21000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=20
+#-----------
+time=7523282425
+mem_heap_B=389712
+mem_heap_extra_B=259808
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=7524895225
+mem_heap_B=758352
+mem_heap_extra_B=505568
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=7526508025
+mem_heap_B=1126992
+mem_heap_extra_B=751328
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=7528120825
+mem_heap_B=1495632
+mem_heap_extra_B=997088
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=30058509506
+mem_heap_B=1536072
+mem_heap_extra_B=1024048
+mem_stacks_B=0
+heap_tree=detailed
+n2: 1536072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1536000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 1536000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 1536000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 1536000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=25
+#-----------
+time=30059316058
+mem_heap_B=1299984
+mem_heap_extra_B=866656
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=30060727524
+mem_heap_B=886872
+mem_heap_extra_B=591248
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=30061538012
+mem_heap_B=649656
+mem_heap_extra_B=433104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=30062348500
+mem_heap_B=412440
+mem_heap_extra_B=274960
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=30063766892
+mem_heap_B=2184
+mem_heap_extra_B=1456
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=30064577492
+mem_heap_B=187464
+mem_heap_extra_B=124976
+mem_stacks_B=0
+heap_tree=detailed
+n2: 187464 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 187392 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 187392 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 187392 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 187392 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=31
+#-----------
+time=30065388092
+mem_heap_B=372744
+mem_heap_extra_B=248496
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=30066198692
+mem_heap_B=558024
+mem_heap_extra_B=372016
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=30067009292
+mem_heap_B=743304
+mem_heap_extra_B=495536
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=30067819892
+mem_heap_B=928584
+mem_heap_extra_B=619056
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=30068630492
+mem_heap_B=1113864
+mem_heap_extra_B=742576
+mem_stacks_B=0
+heap_tree=detailed
+n2: 1113864 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1113792 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 1113792 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 1113792 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 1113792 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=36
+#-----------
+time=30069441092
+mem_heap_B=1299144
+mem_heap_extra_B=866096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=30070859642
+mem_heap_B=1623384
+mem_heap_extra_B=1082256
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=30071670242
+mem_heap_B=1808664
+mem_heap_extra_B=1205776
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=30072480842
+mem_heap_B=1993944
+mem_heap_extra_B=1329296
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=30073291442
+mem_heap_B=2179224
+mem_heap_extra_B=1452816
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=30074102042
+mem_heap_B=2364504
+mem_heap_extra_B=1576336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=30074912642
+mem_heap_B=2549784
+mem_heap_extra_B=1699856
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=30075723242
+mem_heap_B=2735064
+mem_heap_extra_B=1823376
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=30077141792
+mem_heap_B=3059304
+mem_heap_extra_B=2039536
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=120193617655
+mem_heap_B=3072072
+mem_heap_extra_B=2048048
+mem_stacks_B=0
+heap_tree=peak
+n2: 3072072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 3072000 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 3072000 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 3072000 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 3072000 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=46
+#-----------
+time=120194428143
+mem_heap_B=2834832
+mem_heap_extra_B=1889888
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=120195238631
+mem_heap_B=2597616
+mem_heap_extra_B=1731744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=120196049119
+mem_heap_B=2360400
+mem_heap_extra_B=1573600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=120197264851
+mem_heap_B=2004576
+mem_heap_extra_B=1336384
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=120197467473
+mem_heap_B=1945272
+mem_heap_extra_B=1296848
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=120197670095
+mem_heap_B=1885968
+mem_heap_extra_B=1257312
+mem_stacks_B=0
+heap_tree=detailed
+n2: 1885968 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1885896 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 1885896 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 1885896 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 1885896 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=52
+#-----------
+time=120197872717
+mem_heap_B=1826664
+mem_heap_extra_B=1217776
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=120198075339
+mem_heap_B=1767360
+mem_heap_extra_B=1178240
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=120198277961
+mem_heap_B=1708056
+mem_heap_extra_B=1138704
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=120198480583
+mem_heap_B=1648752
+mem_heap_extra_B=1099168
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=120198683205
+mem_heap_B=1589448
+mem_heap_extra_B=1059632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=120198885827
+mem_heap_B=1530144
+mem_heap_extra_B=1020096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=120199088449
+mem_heap_B=1470840
+mem_heap_extra_B=980560
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=120199291071
+mem_heap_B=1411536
+mem_heap_extra_B=941024
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=120199493693
+mem_heap_B=1352232
+mem_heap_extra_B=901488
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=120199696315
+mem_heap_B=1292928
+mem_heap_extra_B=861952
+mem_stacks_B=0
+heap_tree=detailed
+n2: 1292928 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1292856 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 1292856 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 1292856 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 1292856 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=62
+#-----------
+time=120199898937
+mem_heap_B=1233624
+mem_heap_extra_B=822416
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=120200101559
+mem_heap_B=1174320
+mem_heap_extra_B=782880
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=120200304181
+mem_heap_B=1115016
+mem_heap_extra_B=743344
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=120200506803
+mem_heap_B=1055712
+mem_heap_extra_B=703808
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=120200709425
+mem_heap_B=996408
+mem_heap_extra_B=664272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=120200912047
+mem_heap_B=937104
+mem_heap_extra_B=624736
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=120201114669
+mem_heap_B=877800
+mem_heap_extra_B=585200
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=120201317291
+mem_heap_B=818496
+mem_heap_extra_B=545664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=120201519913
+mem_heap_B=759192
+mem_heap_extra_B=506128
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=120201722535
+mem_heap_B=699888
+mem_heap_extra_B=466592
+mem_stacks_B=0
+heap_tree=detailed
+n2: 699888 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 699816 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 699816 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 699816 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 699816 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=72
+#-----------
+time=120201925157
+mem_heap_B=640584
+mem_heap_extra_B=427056
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=120202127779
+mem_heap_B=581280
+mem_heap_extra_B=387520
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=120202330401
+mem_heap_B=521976
+mem_heap_extra_B=347984
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=120202533023
+mem_heap_B=462672
+mem_heap_extra_B=308448
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=120202735645
+mem_heap_B=403368
+mem_heap_extra_B=268912
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=120202938267
+mem_heap_B=344064
+mem_heap_extra_B=229376
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=120203140889
+mem_heap_B=284760
+mem_heap_extra_B=189840
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=120203343511
+mem_heap_B=225456
+mem_heap_extra_B=150304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=120203546133
+mem_heap_B=166152
+mem_heap_extra_B=110768
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=120203748755
+mem_heap_B=106848
+mem_heap_extra_B=71232
+mem_stacks_B=0
+heap_tree=detailed
+n2: 106848 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 106776 0x4006A6: _addLinkBefore (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+  n1: 106776 0x400950: addBackList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+   n1: 106776 0x400AB1: addList (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+    n0: 106776 0x400BF1: main (in /nfs/stak/students/w/weisborj/data-structures/assignment3/a.out)
+ n0: 72 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=82
+#-----------
+time=120203951377
+mem_heap_B=47544
+mem_heap_extra_B=31696
+mem_stacks_B=0
+heap_tree=empty

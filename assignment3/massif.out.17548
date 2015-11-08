@@ -1,0 +1,123 @@
+desc: (none)
+cmd: ./prog
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=101226
+mem_heap_B=24
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=101267
+mem_heap_B=48
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=101301
+mem_heap_B=72
+mem_heap_extra_B=48
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=103477
+mem_heap_B=96
+mem_heap_extra_B=64
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=103996
+mem_heap_B=120
+mem_heap_extra_B=80
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=109528
+mem_heap_B=144
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=110060
+mem_heap_B=168
+mem_heap_extra_B=112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=117681
+mem_heap_B=168
+mem_heap_extra_B=112
+mem_stacks_B=0
+heap_tree=peak
+n4: 168 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 96 0x4006A6: _addLinkBefore (linkedList.c:71)
+  n2: 48 0x400950: addBackList (linkedList.c:201)
+   n0: 24 0x400BEA: main (testLinkedList.c:16)
+   n0: 24 0x400C05: main (testLinkedList.c:18)
+  n2: 48 0x400905: addFrontList (linkedList.c:186)
+   n0: 24 0x400C45: main (testLinkedList.c:24)
+   n0: 24 0x400C60: main (testLinkedList.c:26)
+ n1: 24 0x400665: createLinkedList (linkedList.c:49)
+  n0: 24 0x400BC1: main (testLinkedList.c:12)
+ n1: 24 0x4005FF: _initList (linkedList.c:32)
+  n1: 24 0x400675: createLinkedList (linkedList.c:50)
+   n0: 24 0x400BC1: main (testLinkedList.c:12)
+ n1: 24 0x400614: _initList (linkedList.c:33)
+  n1: 24 0x400675: createLinkedList (linkedList.c:50)
+   n0: 24 0x400BC1: main (testLinkedList.c:12)
+#-----------
+snapshot=9
+#-----------
+time=117681
+mem_heap_B=144
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=123406
+mem_heap_B=120
+mem_heap_extra_B=80
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=127964
+mem_heap_B=96
+mem_heap_extra_B=64
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=129533
+mem_heap_B=72
+mem_heap_extra_B=48
+mem_stacks_B=0
+heap_tree=empty

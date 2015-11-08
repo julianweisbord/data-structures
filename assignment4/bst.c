@@ -35,6 +35,7 @@ void initBSTree(struct BSTree *tree)
 
 struct BSTree*  newBSTree()
 {
+    printf("In newBSTree\n");
     struct BSTree *tree = (struct BSTree *)malloc(sizeof(struct BSTree));
     assert(tree != 0);
 
@@ -113,34 +114,24 @@ int sizeBSTree(struct BSTree *tree) { return tree->cnt; }
 */
 struct Node *_addNode(struct Node *cur, TYPE val)
 {
-    assert(val!=NULL);
+  printf("In _addNode\n");
+	assert(val!=NULL);
 
-    if(compare(cur,val)==-1){
-      if(cur->left!=NULL)
-        return _addNode(cur->left, val);
-      else{
-          //put node here
-          cur = malloc(sizeof(struct Node));
-          cur->val = val;
-          cur->right = NULL;
-          cur->left = NULL;
-          return cur;
-      }
-    }
-    if(compare(cur,val)==1){
-      if(cur->right!=NULL)
-        return _addNode(cur->right,val);
-      else{
-          //put node here
-          cur = malloc(sizeof(struct Node));
-          cur->val = val;
-          cur->right = NULL;
-          cur->left = NULL;
-          return cur;
-      }
-    }
+	if(cur==NULL){
+		cur = malloc(sizeof(struct Node));
+		cur->val = val;
+		cur->left = cur->right = NULL;
+		return cur;
+
+	}
+	else {
+		if(compare(cur->val,val)==1)
+			cur->left = _addNode(cur->left,val);
+		else
+			cur->right = _addNode(cur->right,val);
+	}
+	return cur;
     /*write this*/
-    return NULL;
 }
 
 /*
@@ -155,6 +146,7 @@ struct Node *_addNode(struct Node *cur, TYPE val)
 */
 void addBSTree(struct BSTree *tree, TYPE val)
 {
+    printf("In addBSTree\n");
     tree->root = _addNode(tree->root, val);
     tree->cnt++;
 }
@@ -260,11 +252,12 @@ struct Node *_removeLeftMost(struct Node *cur)
 struct Node *_removeNode(struct Node *cur, TYPE val)
 {
     /*write this*/
+    printf("- In _removeNode");
     assert(cur !=NULL);
     assert(val!=NULL);
     struct Node * temp =NULL;
 
-    switch(compare(cur,val)){
+    switch(compare(cur->val,val)){
       case(1):
         cur->right = _removeNode(cur->right,val);
         break;
@@ -404,6 +397,7 @@ void printTestResult(int predicate, char *nameTestFunction, char *message){
 
 */
 void testAddNode() {
+    printf("In testAddNode\n");
     struct BSTree *tree	= newBSTree();
 
     struct data myData1,  myData2,  myData3,   myData4;
@@ -595,20 +589,19 @@ void testRemoveNode() {
 int main(int argc, char *argv[]){
 
     //After implementing your code, please uncommnet the following calls to the test functions and test your code
-
-    // testAddNode();
-
-    printf("\n");
-    //	testContainsBSTree();
+    testAddNode();
 
     printf("\n");
-    //testLeftMost();
+    testContainsBSTree();
 
     printf("\n");
-    //testRemoveLeftMost();
+    testLeftMost();
 
     printf("\n");
-    //testRemoveNode();
+    testRemoveLeftMost();
+
+    printf("\n");
+    testRemoveNode();
 
     return 0;
 }
