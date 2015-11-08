@@ -116,24 +116,62 @@ struct Node *_addNode(struct Node *cur, TYPE val)
 {
   printf("In _addNode\n");
 	assert(val!=NULL);
+  struct Node* temp = cur;
+// 	if(cur==NULL){
+// 		cur = malloc(sizeof(struct Node));
+// 		cur->val = val;
+// 		cur->left = NULL;
+//    cur->right = NULL;
+// 		return cur;
+//
+// 	}
+// 	else {
+// 		if(compare(cur->val,val)==1)
+// 			cur->left = _addNode(cur->left,val);
+// 		else
+// 			cur->right = _addNode(cur->right,val);
+// 	}
+// 	return cur;
+//     /*write this*/
+// }
+if( cur == NULL )
+    {
+      temp = malloc(sizeof(struct Node));
+      temp->val = val;
+      temp->left = NULL;
+      temp->right = NULL;
+      return temp;
+    }
+else
+    {
+    /* Note: a binary search tree is often considered an ordered set, i.e.
+     * no duplicates are allowed. However, after in class discussion, it is
+     * suggested that duplicates should be allowed, thus this implementation
+     * allows duplicate values to be inserted, on the RIGHT
+     */
+    switch( compare( val, cur->val ) )
+        {
+        /* val < cur->val */
+        case( -1 ):
+            cur->left = _addNode( cur->left, val );
+            break;
+        /* val = cur->val */
+        case( 0 ):             // DELIBERATE FALLTHROUGH
+        /* val > cur->val */
+        case( 1 ):
+            cur->right = _addNode( cur->right, val );
+            break;
+        default:
+            /* Should not reach this case under normal circumstances */
+            assert( NULL );
+            break;
+        }
+    }
 
-	if(cur==NULL){
-		cur = malloc(sizeof(struct Node));
-		cur->val = val;
-		cur->left = cur->right = NULL;
-		return cur;
+/* Original root should still be the root of the tree with val added */
+return( cur );
 
-	}
-	else {
-		if(compare(cur->val,val)==1)
-			cur->left = _addNode(cur->left,val);
-		else
-			cur->right = _addNode(cur->right,val);
-	}
-	return cur;
-    /*write this*/
 }
-
 /*
   function to add a value to the binary search tree
   param: tree   the binary search tree
@@ -146,6 +184,8 @@ struct Node *_addNode(struct Node *cur, TYPE val)
 */
 void addBSTree(struct BSTree *tree, TYPE val)
 {
+    assert(tree!=NULL);
+    assert(val!=NULL);
     printf("In addBSTree\n");
     tree->root = _addNode(tree->root, val);
     tree->cnt++;
@@ -252,7 +292,7 @@ struct Node *_removeLeftMost(struct Node *cur)
 struct Node *_removeNode(struct Node *cur, TYPE val)
 {
     /*write this*/
-    printf("- In _removeNode");
+    printf("- In _removeNode\n");
     assert(cur !=NULL);
     assert(val!=NULL);
     struct Node * temp =NULL;
@@ -319,6 +359,7 @@ void removeBSTree(struct BSTree *tree, TYPE val)
 
 /*----------------------------------------------------------------------------*/
 void printNode(struct Node *cur) {
+    printf("Printing nodes: \n");
     if (cur == 0)
 	return;
     printf("(");
@@ -492,6 +533,8 @@ void testContainsBSTree() {
     myData4.name = "lefty of lefty";
     myData5.number = 111;
     myData5.name = "not in tree";
+
+    printTree(tree);
 
     printTestResult(containsBSTree(tree, &myData1), "containsBSTree", "when test containing 50 as root");
 

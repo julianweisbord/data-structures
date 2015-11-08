@@ -26,17 +26,17 @@
 int compare(TYPE left, TYPE right)
 {
     /*FIXME: write this*/
-	printf("compare function\n");
+	// printf("compare function\n");
 	if(((struct data*)left)->number < ((struct data*)right)->number){
-		printf("After compare\n");
+		// printf("After compare\n");
 		return -1;//right should be greater than left
 	}
 	else if(((struct data*)left)->number > ((struct data*)right)->number){
-		printf("After compare\n");
+		// printf("After compare\n");
 		return 1;//left should be greater than right
 	}
 	else if(((struct data*)left)->number == ((struct data*)right)->number){
-		printf("After compare\n");
+		// printf("After compare\n");
 		return 0;
 	}
 
