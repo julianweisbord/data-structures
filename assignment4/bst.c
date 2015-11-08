@@ -18,6 +18,14 @@
   post:	tree size is 0
   root is null
 */
+void print_val(struct BSTree * tree){
+  struct Node*cur = tree->root;
+  printf("%d\n",(int)cur->val);
+  while(cur!=NULL){
+    printf("%d\n",(int)cur->left->val);
+    printf("%d\n",(int)cur->right->val);
+  }
+}
 
 void initBSTree(struct BSTree *tree)
 {
@@ -534,7 +542,8 @@ void testContainsBSTree() {
     myData5.number = 111;
     myData5.name = "not in tree";
 
-    printTree(tree);
+    // printTree(tree);
+    print_val(tree);
 
     printTestResult(containsBSTree(tree, &myData1), "containsBSTree", "when test containing 50 as root");
 
