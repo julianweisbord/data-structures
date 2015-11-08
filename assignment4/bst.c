@@ -263,7 +263,7 @@ struct Node *_removeNode(struct Node *cur, TYPE val)
     assert(cur !=NULL);
     assert(val!=NULL);
     struct Node * temp =NULL;
-    
+
     switch(compare(cur,val)){
       case(1):
         cur->right = _removeNode(cur->right,val);
@@ -274,18 +274,28 @@ struct Node *_removeNode(struct Node *cur, TYPE val)
       case(0):
       //remove node
 
-      if(cur->left == NULL){
-        temp = cur->right;
-        free(cur);
-      }
-      else if(cur->right == NULL){
-        temp = cur->left;
-        free(cur);
-      }
-      else{
-        // get leftmost of right subtree
-      }
-      return temp;
+        if(cur->left == NULL){
+          temp = cur->right;
+          free(cur);
+        }
+        else if(cur->right == NULL){
+          temp = cur->left;
+          free(cur);
+        }
+        else{
+          // get leftmost of right subtree
+          temp = malloc(sizeof(struct Node));
+          temp->val = _leftMost(cur->right);
+
+          _removeLeftMost(cur->right);
+          temp->right= cur->right;
+          temp->left = cur->left;
+
+        }
+        return temp;
+      default:
+          assert(NULL);
+          break;
 
     }
 
