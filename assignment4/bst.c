@@ -115,8 +115,7 @@ struct Node *_addNode(struct Node *cur, TYPE val)
 {
     assert(val!=NULL);
 
-    if(compare(cur,val)==1){
-      //go right
+    if(compare(cur,val)==-1){
       if(cur->left!=NULL)
         return _addNode(cur->left, val);
       else{
@@ -128,8 +127,8 @@ struct Node *_addNode(struct Node *cur, TYPE val)
           return cur;
       }
     }
-    if(compare(cur,val)==-1){
-      if(cur->left!=NULL)
+    if(compare(cur,val)==1){
+      if(cur->right!=NULL)
         return _addNode(cur->right,val);
       else{
           //put node here
@@ -261,7 +260,34 @@ struct Node *_removeLeftMost(struct Node *cur)
 struct Node *_removeNode(struct Node *cur, TYPE val)
 {
     /*write this*/
-    return NULL;
+    assert(cur !=NULL);
+    assert(val!=NULL);
+    struct Node * temp =NULL;
+    
+    switch(compare(cur,val)){
+      case(1):
+        cur->right = _removeNode(cur->right,val);
+        break;
+      case(-1):
+          cur->left = _removeNode(cur->left, val);
+          break;
+      case(0):
+      //remove node
+
+      if(cur->left == NULL){
+        temp = cur->right;
+        free(cur);
+      }
+      else if(cur->right == NULL){
+        temp = cur->left;
+        free(cur);
+      }
+      else{
+        // get leftmost of right subtree
+      }
+      return temp;
+
+    }
 
 }
 /*
