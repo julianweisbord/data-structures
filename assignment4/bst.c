@@ -223,17 +223,17 @@ int containsBSTree(struct BSTree *tree, TYPE val)
     struct Node * current = tree->root;
     //call compare
     while(current != NULL){
-      if(compare(tree->root->val,val) ==0){
+      if(compare(val,current->val) ==0){
         return 1;
       }
-      else if(compare(tree->root->val,val) ==1){
+      else if(compare(val,current->val) ==1){
         //go to right
         if(current->right != NULL)
           current = current->right;
         else
             return 0;
       }
-      else if(compare(tree->root->val,val) ==-1){
+      else if(compare(val,current->val) ==-1){
         //go to left
         if(current->left!=NULL)
           current = current->left;
@@ -309,45 +309,29 @@ struct Node *_removeNode(struct Node *cur, TYPE val)
     printf("- In _removeNode\n");
     assert(cur !=NULL);
     assert(val!=NULL);
-    struct Node * temp =NULL;
+    if(compare( cur->val,val)==0){
+    	if(cur->right==NULL){
+		struct Node* temp = cur->left;
+		free(cur);
+		return	temp;	
+	}
+	cur->val = _leftMost(cur->right);
+	cur->right = _removeLeftMost(cur->right);
 
-    switch(compare(cur->val,val)){
-      case(1):
-        cur->right = _removeNode(cur->right,val);
-        break;
-      case(-1):
-          cur->left = _removeNode(cur->left, val);
-          break;
-      case(0):
-      //remove node
-
-        if(cur->left == NULL){
-          temp = cur->right;
-          free(cur);
-        }
-        else if(cur->right == NULL){
-          temp = cur->left;
-          free(cur);
-        }
-        else{
-          // get leftmost of right subtree
-          temp = malloc(sizeof(struct Node));
-          temp->val = _leftMost(cur->right);
-
-          _removeLeftMost(cur->right);
-          temp->right= cur->right;
-          temp->left = cur->left;
-
-        }
-        return temp;
-      default:
-          assert(NULL);
-          break;
-
+	
     }
+    else if(compare(cur->val,val) ==1){
+    	cur->left = _removeNode(cur->left,val);
+    }
+    else{
+    	cur->right = _removeNode(cur->right, val);
+    } 
+    return cur;	
 
-}
-/*
+
+
+} 
+    /*
   function to remove a value from the binary search tree
   param: tree   the binary search tree
   val		the value to be removed from the tree
