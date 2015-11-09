@@ -46,5 +46,8 @@ int compare(TYPE left, TYPE right)
 void print_type(TYPE curval)
 {
     /*FIXME: write this*/
+		assert(curval!=NULL);
+		struct data* current = (struct data*) curval;
+		printf("%d\n", current->number);
 
 }
