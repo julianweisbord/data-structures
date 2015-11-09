@@ -4,3 +4,7 @@ struct data {
 	int number;
 	char *name;
 };
+struct pizza{
+	double numToppings;
+	char *name;
+}
