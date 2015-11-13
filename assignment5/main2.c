@@ -9,7 +9,7 @@
 
 int main(int argc, const char * argv[])
 {
-  	TYPE task1;
+  TYPE task1;
 	TYPE task2;
 	TYPE task3;
 	TYPE task4;

@@ -29,7 +29,14 @@
 int compare(TYPE left, TYPE right)
 {
     /*FIXME: write this*/
+    if((Task *)left->priority < (Task *)left->priority){
+      return -1;
+    }
+    else if((Task *)left->priority > (Task *)left->priority){
+      return 1;
 
+    else
+      return 0;
 
 }
 
@@ -59,6 +66,7 @@ void print_type(TYPE val)
 TaskP createTask (int priority, char *desc)
 {
   /*FIXME: Write this */
+
 }
 
 /*  Save the list to a file
