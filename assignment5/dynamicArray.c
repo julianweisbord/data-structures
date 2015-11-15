@@ -578,7 +578,6 @@ void addHeap(DynArr *heap, TYPE val, comparator  compare)
 
 void _adjustHeap(DynArr *heap, int max, int pos, comparator compare)
 {
-  /* FIXME: Write this */
 	assert(max<= heap->size);
 	int left_child = 2*pos +1; int right_child =2*pos +2;
 	int smallest;
@@ -644,7 +643,13 @@ void _buildHeap(DynArr *heap, comparator compare)
 
 void sortHeap(DynArr *heap, comparator compare)
 {
-  /* FIXME: Write this */
+	int i;
+  _buildHeap(heap);
+
+	for(i =sizeDynArr(heap) -1; i > 0; --i){
+		swapDynArr(heap, 0, i);
+		_adjustHeap(heap, i -1, 0);
+	}
 }
 
 

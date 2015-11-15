@@ -65,8 +65,10 @@ void print_type(TYPE val)
 */
 TaskP createTask (int priority, char *desc)
 {
-  /*FIXME: Write this */
-
+  struct Task*v = malloc(sizeof(Task));
+  strcpy(v->description, desc);
+  v->priority = priority;
+  return v;
 }
 
 /*  Save the list to a file
