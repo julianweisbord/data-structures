@@ -521,7 +521,6 @@ void _adjustHeap(DynArr *heap, int max, int pos, comparator compare);
 */
 int _smallerIndexHeap(DynArr *heap, int i, int j, comparator compare)
 {
-  /* FIXME Write this */
 	assert(j < sizeDynArr(heap));
 	assert(i < sizeDynArr(heap));
 	if (compare(heap->data[i], heap->data[j]) <= 0){
@@ -539,7 +538,6 @@ int _smallerIndexHeap(DynArr *heap, int i, int j, comparator compare)
 TYPE getMinHeap(DynArr *heap)
 {
 	assert(sizeDynArr(heap)>0);
-  /* FIXME: Write This */
 	return getDynArr(heap,0);
 }
 
@@ -552,7 +550,21 @@ TYPE getMinHeap(DynArr *heap)
 */
 void addHeap(DynArr *heap, TYPE val, comparator  compare)
 {
-  /* FIXME: Write This */
+  assert(heap!=NULL);
+	int current, parent;
+
+	addDynArr(heap, val);
+	current = sizeDynArr(heap) -1;
+	while(current !=0){
+		parent = (current -1)/2;
+		if(compare(getDynArr(heap, current), getDynArr(heap, parent))== -1){
+			swapDynArr(heap, current, parent);
+			current = parent;
+		}
+		else
+			return;
+	}
+
 }
 
 /*	Adjust heap to maintain heap property
@@ -597,7 +609,13 @@ void _adjustHeap(DynArr *heap, int max, int pos, comparator compare)
 */
 void removeMinHeap(DynArr *heap, comparator compare)
 {
-  /* FIXME: Write this */
+  assert(sizeDynArr(heap) > 0);
+	int lastVal = sizeDynArr(heap);
+	if(lastVal!= 0){
+		putDynArr(heap,0, getDynArr(heap, lastVal -1));
+		removeAtDynArr(heap, lastVal -1);
+		_adjustHeap(heap, sizeDynArr(heap)-1, 0);
+	}
 }
 
 /* builds a heap from an arbitrary dynArray
@@ -609,7 +627,12 @@ void removeMinHeap(DynArr *heap, comparator compare)
 
 void _buildHeap(DynArr *heap, comparator compare)
 {
-  /* FIXME: Write This */
+  assert(heap!= NULL);
+	int end = sizeDynArr(heap) -1;
+	int i;
+	for(i = end; i>=0; --i){
+		_adjustHeap(heap, end ,i);
+	}
 }
 /*
     In-place sort of the heap
