@@ -522,6 +522,12 @@ void _adjustHeap(DynArr *heap, int max, int pos, comparator compare);
 int _smallerIndexHeap(DynArr *heap, int i, int j, comparator compare)
 {
   /* FIXME Write this */
+	assert(j < sizeDynArr(heap));
+	assert(i < sizeDynArr(heap));
+	if (compare(heap->data[i], heap->data[j]) <= 0){
+		return i;
+	}
+	return j;
 }
 
 /*	Get the first node, which has the min priority, from the heap
@@ -532,8 +538,9 @@ int _smallerIndexHeap(DynArr *heap, int i, int j, comparator compare)
 */
 TYPE getMinHeap(DynArr *heap)
 {
-
+	assert(sizeDynArr(heap)>0);
   /* FIXME: Write This */
+	return getDynArr(heap,0);
 }
 
 /*	Add a node to the heap
@@ -560,6 +567,26 @@ void addHeap(DynArr *heap, TYPE val, comparator  compare)
 void _adjustHeap(DynArr *heap, int max, int pos, comparator compare)
 {
   /* FIXME: Write this */
+	assert(max<= heap->size);
+	int left_child = 2*pos +1; int right_child =2*pos +2;
+	int smallest;
+	if(compare(right_child <=max){
+		smallest = _smallerIndexHeap(heap, left_child,right_child, compare);
+		if (compare(heap->data[smallest], heap->data[pos]) == -1)
+		{
+			swapDynArr(heap, pos, smallest);
+			_adjustHeap(heap, max, smallest, compare);
+		}
+		else if(left_child <= max){
+			if(compare(head->data[left_child], heap->data[pos])==-1){
+				swapDynArr(heap, pos, left_child);
+				_adjustHeap(heap, max, left_child);
+			}
+
+		}
+
+	}
+
 }
 
 /*	Remove the first node, which has the min priority, from the heap
