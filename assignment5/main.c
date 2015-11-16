@@ -37,18 +37,10 @@ int main (int argc, const char * argv[])
       //different cases
       switch(cmd){
         case 'l':
-          printf("Loading todo list!");
-          if (fgets(filename, sizeof(filename), stdin) != NULL){//get rid of newline
+          printf("Loading todo list!\n");
 
-    				nullPtr = strchr(filename, '\n');
-    				if (nullPtr)
-    					*nullPtr = '\0';
-			    }
-          filePtr = fopen(filename, "r");
-			    if (filePtr == NULL) {
-		  		  fprintf(stderr, "error opening file %s\n", filename);
-				    break;
-			    }
+          filePtr = fopen("todo.txt", "r");
+
           loadList(list, filePtr);
           fclose(filePtr);
           printf("done...");
@@ -56,15 +48,8 @@ int main (int argc, const char * argv[])
 
         case 's':
 	  if(sizeDynArr(list)>0){
-	  	printf("Enter the file\n");
-  		if(fgets(filename, sizeof(filename), stdin)!= NULL){
-  			nullPtr = strchr(filename, '\n');
-  			if(nullPtr){
-  				*nullPtr = '\0';
-  			}
-  		}
 
-  	 filePtr = fopen(filename, "w");
+  	 filePtr = fopen("todo.txt", "w");
   	 if(filePtr==NULL){
   	 	fprintf(stderr, "Can't OPen file");
   		break;
@@ -75,8 +60,9 @@ int main (int argc, const char * argv[])
   	 printf("saved.\n\n");
 	 }
 	  else
-		 printf("Empty todo list.");
-	  break;
+		  printf("Empty todo list.");
+
+    break;
 
 
         case 'a':
@@ -86,29 +72,27 @@ int main (int argc, const char * argv[])
           fgets(filey, sizeof(filey), stdin);
           printf("What is the priority, bro?\n");
           scanf("%d",&prior);
+          fgetc(stdin);
           TaskP theTask;
           theTask = createTask(prior,filey);
           addHeap(list, theTask, compare);
-          // if(fgets(desc, sizeof(desc), stdin)!=NULL){
-          //   nullPtr = strchr(desc, '\n');
-          //   if(nullPtr){
-          //     *nullPtr = '\0';
-          //
-          //   }
-          // }
+
+          break;
         case 'g':
 
         min = getMinHeap(list);
         printf("Printing the root.\n");
         print_type(min);
-
+        break;
 
         case 'r':
           printf("Removing...\n");
           removeMinHeap(list, compare);
+          break;
         case 'p':
           printf("Printing the list: \n");
           printList(list);
+          break;
         case 'e':
           printf("Exitting...");
           exit(0);
