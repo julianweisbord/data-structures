@@ -9,6 +9,7 @@ int main (int argc, const char * argv[])
 {
   char cmd = ' ';
   DynArr* mainList = createDynArr(10);
+  FILE * filePtr;
 
   printf("\n\n** TO-DO LIST APPLICATION **\n\n");
 
@@ -27,6 +28,37 @@ int main (int argc, const char * argv[])
       cmd = getchar();
       /* clear the trailing newline character */
       while (getchar() != '\n');
+      //different cases
+      switch(cmd){
+        case 'l':
+          printf("Loading todo list!");
+          if (fgets(filename, sizeof(filename), stdin) != NULL){//get rid of newline
+
+    				nlptr = strchr(filename, '\n');
+    				if (nlptr)
+    					*nlptr = '\0';
+			    }
+          filePointer = fopen(filename, "r");
+			    if (filePointer == NULL) {
+		  		  fprintf(stderr, "error opening file %s\n", filename);
+				    break;
+			    }
+          loadList(mainList, filePtr);
+          fclose(filePtr);
+          printf("done...");
+          break;
+
+        case 's':
+
+        case 'a':
+        case 'g':
+        case 'r':
+        case 'p':
+
+        case 'e':
+          printf("Exitting...");
+          exit(0);
+      }
 
       /* Fixme:  Your logic goes here! */
 
