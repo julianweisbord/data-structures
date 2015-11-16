@@ -29,10 +29,13 @@
 int compare(TYPE left, TYPE right)
 {
     /*FIXME: write this*/
-    if((Task *)left->priority < (Task *)left->priority){
+    struct Task* task1 = (struct Task*)left;
+    struct Task* task2 = (struct Task*)right;
+
+    if(task1->priority < task2->priority){
       return -1;
     }
-    else if((Task *)left->priority > (Task *)left->priority){
+    else if(task1->priority > task2->priority)
       return 1;
 
     else
@@ -65,7 +68,7 @@ void print_type(TYPE val)
 */
 TaskP createTask (int priority, char *desc)
 {
-  struct Task*v = malloc(sizeof(Task));
+  struct Task* v = malloc(sizeof(struct Task));
   strcpy(v->description, desc);
   v->priority = priority;
   return v;

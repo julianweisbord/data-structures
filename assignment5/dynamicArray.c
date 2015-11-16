@@ -581,7 +581,7 @@ void _adjustHeap(DynArr *heap, int max, int pos, comparator compare)
 	assert(max<= heap->size);
 	int left_child = 2*pos +1; int right_child =2*pos +2;
 	int smallest;
-	if(compare(right_child <=max){
+	if(right_child <=max){
 		smallest = _smallerIndexHeap(heap, left_child,right_child, compare);
 		if (compare(heap->data[smallest], heap->data[pos]) == -1)
 		{
@@ -589,9 +589,9 @@ void _adjustHeap(DynArr *heap, int max, int pos, comparator compare)
 			_adjustHeap(heap, max, smallest, compare);
 		}
 		else if(left_child <= max){
-			if(compare(head->data[left_child], heap->data[pos])==-1){
+			if(compare(heap->data[left_child], heap->data[pos])==-1){
 				swapDynArr(heap, pos, left_child);
-				_adjustHeap(heap, max, left_child);
+				_adjustHeap(heap, max, left_child, compare);
 			}
 
 		}
@@ -613,7 +613,7 @@ void removeMinHeap(DynArr *heap, comparator compare)
 	if(lastVal!= 0){
 		putDynArr(heap,0, getDynArr(heap, lastVal -1));
 		removeAtDynArr(heap, lastVal -1);
-		_adjustHeap(heap, sizeDynArr(heap)-1, 0);
+		_adjustHeap(heap, sizeDynArr(heap)-1, 0, compare);
 	}
 }
 
@@ -630,7 +630,7 @@ void _buildHeap(DynArr *heap, comparator compare)
 	int end = sizeDynArr(heap) -1;
 	int i;
 	for(i = end; i>=0; --i){
-		_adjustHeap(heap, end ,i);
+		_adjustHeap(heap, end ,i, compare);
 	}
 }
 /*
@@ -644,11 +644,11 @@ void _buildHeap(DynArr *heap, comparator compare)
 void sortHeap(DynArr *heap, comparator compare)
 {
 	int i;
-  _buildHeap(heap);
+  _buildHeap(heap, compare);
 
 	for(i =sizeDynArr(heap) -1; i > 0; --i){
 		swapDynArr(heap, 0, i);
-		_adjustHeap(heap, i -1, 0);
+		_adjustHeap(heap, i -1, 0, compare);
 	}
 }
 

@@ -3,13 +3,19 @@
 #include <assert.h>
 #include <string.h>
 #include "toDoList.h"
+#include "dynamicArray.h"
 
 
 int main (int argc, const char * argv[])
 {
   char cmd = ' ';
-  DynArr* mainList = createDynArr(10);
+  // DynArr* mainList = createDynArr(10);
   FILE * filePtr;
+  char filename[50], *nullPtr;
+  int prior;
+  DynArr * list = createDynArr(10);
+  char filey[256];
+  TYPE min;
 
   printf("\n\n** TO-DO LIST APPLICATION **\n\n");
 
@@ -34,27 +40,75 @@ int main (int argc, const char * argv[])
           printf("Loading todo list!");
           if (fgets(filename, sizeof(filename), stdin) != NULL){//get rid of newline
 
-    				nlptr = strchr(filename, '\n');
-    				if (nlptr)
-    					*nlptr = '\0';
+    				nullPtr = strchr(filename, '\n');
+    				if (nullPtr)
+    					*nullPtr = '\0';
 			    }
-          filePointer = fopen(filename, "r");
-			    if (filePointer == NULL) {
+          filePtr = fopen(filename, "r");
+			    if (filePtr == NULL) {
 		  		  fprintf(stderr, "error opening file %s\n", filename);
 				    break;
 			    }
-          loadList(mainList, filePtr);
+          loadList(list, filePtr);
           fclose(filePtr);
           printf("done...");
           break;
 
         case 's':
+	  if(sizeDynArr(list)>0){
+	  	printf("Enter the file\n");
+  		if(fgets(filename, sizeof(filename), stdin)!= NULL){
+  			nullPtr = strchr(filename, '\n');
+  			if(nullPtr){
+  				*nullPtr = '\0';
+  			}
+  		}
+
+  	 filePtr = fopen(filename, "w");
+  	 if(filePtr==NULL){
+  	 	fprintf(stderr, "Can't OPen file");
+  		break;
+  	 }
+  	 saveList(list, filePtr);
+  	 fclose(filePtr);
+
+  	 printf("saved.\n\n");
+	 }
+	  else
+		 printf("Empty todo list.");
+	  break;
+
 
         case 'a':
-        case 'g':
-        case 'r':
-        case 'p':
 
+
+          printf("Enter the task description: \n");
+          fgets(filey, sizeof(filey), stdin);
+          printf("What is the priority, bro?\n");
+          scanf("%d",&prior);
+          TaskP theTask;
+          theTask = createTask(prior,filey);
+          addHeap(list, theTask, compare);
+          // if(fgets(desc, sizeof(desc), stdin)!=NULL){
+          //   nullPtr = strchr(desc, '\n');
+          //   if(nullPtr){
+          //     *nullPtr = '\0';
+          //
+          //   }
+          // }
+        case 'g':
+
+        min = getMinHeap(list);
+        printf("Printing the root.\n");
+        print_type(min);
+
+
+        case 'r':
+          printf("Removing...\n");
+          removeMinHeap(list, compare);
+        case 'p':
+          printf("Printing the list: \n");
+          printList(list);
         case 'e':
           printf("Exitting...");
           exit(0);
@@ -67,7 +121,7 @@ int main (int argc, const char * argv[])
     }
   while(cmd != 'e');
   /* delete the list */
-  deleteDynArr(mainList);
+  deleteDynArr(list);
 
   return 0;
 }
