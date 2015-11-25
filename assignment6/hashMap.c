@@ -67,6 +67,16 @@ hashMap *createMap(int tableSize) {
 void _freeLinks (struct hashLink **table, int tableSize)
 {
 	/*write this*/
+  int i;
+  struct hashLink * temp;//need placeholder
+  for(i =0; i< tableSize; ++i){
+    while(table[i] != NULL){
+      temp = table[i];
+      table[i] = table[i]->next;
+      free(temp);
+    }
+  }
+
 }
 
 /* Deallocate buckets, table, and hashTable structure itself.*/
@@ -88,6 +98,23 @@ Resizes the hash table to be the size newTableSize
 void _setTableSize(struct hashMap * ht, int newTableSize)
 {
 	/*write this*/
+  int i;
+  struct hashLink * current;
+  hashMap* newTable = createMap(newTableSize);
+  for(i=0; i < ht->tableSize; ++i){
+    if(ht->table!=NULL){
+    current = ht->table[i];
+      while(current != NULL){
+        insertMap(newTable, current->key; current->value);
+        current= current->next
+      }
+    }
+  }
+  //free original links
+  _freeLinks(ht->table, newTableSize);
+
+  ht->tableSize = newTableSize;
+  ht->table = newTable;
 }
 
 /*
