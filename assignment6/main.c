@@ -34,7 +34,7 @@ char* getWord(FILE *file);
 int main (int argc, const char * argv[]) {
 	const char* filename;
 	struct hashMap *hashTable;
-	int tableSize = 10;
+	int tableSize = 100000;
 	clock_t timer;
 	FILE *fileptr;
 	char* word;
@@ -94,7 +94,7 @@ fclose(fileptr);
 
 	printMap(hashTable, keyPrint, valPrint);
 	timer = clock() - timer;
-	printf("\nconcordance ran in %f seconds\n", (float)timer / (float)CLOCKS_PER_SEC);
+
 	printf("Table emptyBuckets = %d\n", emptyBuckets(hashTable));
         printf("Table count = %d\n", size(hashTable));
 	printf("Table capacity = %d\n", capacity(hashTable));
@@ -130,6 +130,7 @@ fclose(fileptr);
 
         deleteMap(hashTable);
 	printf("\nDeleted the table\n");
+  printf("\n concordance ran in %f seconds\n", (float)timer / (float)CLOCKS_PER_SEC);
 	return 0;
 }
 
