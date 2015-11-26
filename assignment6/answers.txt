@@ -6,4 +6,16 @@ This will cause each letter to have a different value depending on its location 
 4) yes, this is the same as answer 1.
 5) Yes, different hash functions will organize the keys differently, resulting in possibly more or less empty buckets
 6) yes a prime number will run the program more efficiently.(less empty buckets). this is because modular operator will always result in a non zero number when a prime number is used.
-7) it appears to be directly linearer seen in the graph
+7) it appears to be exponentially smaller as seen in the graph and table below:
+
+table size: 5,000,000
+time: .647782 seconds
+
+table size: 10,000,000
+time: .694358 seconds
+
+table size: 15,000,000
+time: .718304 seconds
+
+table size: 20,000,000
+time: .754601 seconds

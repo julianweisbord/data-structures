@@ -34,7 +34,7 @@ char* getWord(FILE *file);
 int main (int argc, const char * argv[]) {
 	const char* filename;
 	struct hashMap *hashTable;
-	int tableSize = 100000;
+	int tableSize = 20000000;
 	clock_t timer;
 	FILE *fileptr;
 	char* word;
