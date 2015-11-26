@@ -37,6 +37,9 @@ int main (int argc, const char * argv[]) {
 	int tableSize = 10;
 	clock_t timer;
 	FILE *fileptr;
+	char* word;
+	int *value;
+	int test;
     /*
      this part is using command line arguments, you can use them if you wish
      but it is not required. DO NOT remove this code though, we will use it for
@@ -45,19 +48,48 @@ int main (int argc, const char * argv[]) {
      if you wish not to use command line arguments manually type in your
      filename and path in the else case.
      */
-    if(argc == 2)
-        filename = argv[1];
-    else
-        filename = "input1.txt"; /*specify your input text file here*/
+  if(argc == 2)
+      filename = argv[1];
+  else
+      filename = "input1.txt"; /*specify your input text file here*/
 
-    printf("opening file: %s\n", filename);
+  printf("opening file: %s\n", filename);
 
+	fileptr = fopen(filename,"r");
 	timer = clock();
 
 	hashTable = createMap(tableSize);
 
+
     /*... concordance code goes here ...*/
 
+
+do{
+	word = getWord(fileptr);
+
+	if(word != NULL){
+		test = containsKey(hashTable, word);
+		if(test == 0) {
+			value = malloc(sizeof(int));
+			*value = 1;
+			insertMap(hashTable, word, value);
+		}
+		else{
+			value = atMap(hashTable, word);
+			*(int *)value = *(int *)value +1;
+		}
+	}
+}while(word != NULL);
+fclose(fileptr);
+
+/* Print the words (case sensitive)*/
+//int i;
+//for(i = 0;i < capacity(hashTable); i++){
+//		printf("%s: ", hashTable->table[i]->key);
+//		printf("%d", hashTable->table[i]->value);
+//		printf("\n");
+		//hashTable->table->;
+//	}
 	/*... concordance code ends here ...*/
 
 	printMap(hashTable, keyPrint, valPrint);

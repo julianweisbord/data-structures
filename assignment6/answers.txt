@@ -1,0 +1,9 @@
+1) tim and mit will return the same hashing value because they have the same letters.
+This will not be the same using stringHash2 because it is multiplying the location in the string array by its index plus 1.
+This will cause each letter to have a different value depending on its location but in stringhash1 it is independent of its location.
+2) Stringhash2 is better because you won't get the same has index for two different words.
+3) No because each word is a hashLink, even if it is also a bucket.
+4) yes, this is the same as answer 1.
+5) Yes, different hash functions will organize the keys differently, resulting in possibly more or less empty buckets
+6) yes a prime number will run the program more efficiently.(less empty buckets). this is because modular operator will always result in a non zero number when a prime number is used.
+7) it appears to be directly linearer seen in the graph
